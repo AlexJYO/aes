@@ -11,10 +11,10 @@
 		
 		public function __construct()
 		{
-			$this->host = 'sql100.eshost.com.ar';
-			$this->db = 'eshos_27885653_aes';
-			$this->user = 'eshos_27885653';
-			$this->pass = '9vb3r8387380';
+			$this->host = 'b9ovl3iko3wxf2qrjy1k-mysql.services.clever-cloud.com';
+			$this->db = 'b9ovl3iko3wxf2qrjy1k';
+			$this->user = 'uvwydgyg5gxuk6nv';
+			$this->pass = 'SPeoMqN50NNNv5AyOXjL';
 		}
 		function connect(){
 			try{
