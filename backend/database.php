@@ -11,10 +11,10 @@
 		
 		public function __construct()
 		{
-			$this->host = 'localhost';
-			$this->db = 'aes';
-			$this->user = 'root';
-			$this->pass = '';
+			$this->host = 'sql100.eshost.com.ar';
+			$this->db = 'eshos_27885653_aes';
+			$this->user = 'eshos_27885653';
+			$this->pass = '9vb3r8387380';
 		}
 		function connect(){
 			try{
