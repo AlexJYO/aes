@@ -35,7 +35,7 @@ $(document).ready(function(){
 	            sortDescending: ": Activar para ordenar la columna de manera descendente"
 	        }
 	    },
-	    //order: [[0,'desc']],
+	    order: [[0,'desc']],
 	    lengthMenu: [ 5, 10, 20]
 
 	});
