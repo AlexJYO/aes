@@ -88,6 +88,13 @@ $(document).ready(function(){
 					$('#flexRadioDefault6').prop('checked',false);
 					$('#flexRadioDefault5').prop('checked',true);
 				}
+				$('#aes_alcanceT').val(sol_data['alcance_trabajo']);
+				$('#aes_dibujoT').val(sol_data['dibujo_tecnico']);
+				$('#aes_muestra').val(sol_data['muestra_foto']);
+				$('#aes_SC_Sol').val(sol_data['tipo_compra']);
+				$('#aes_cuenta').val(sol_data['cuenta']);
+				$('#aes_noSC_Sol').val(sol_data['no_sc_solped']);
+				$('#aes_fechaL').val(sol_data['fecha_liberacion']);
 				console.log(sol_data);
 			}
 		});
