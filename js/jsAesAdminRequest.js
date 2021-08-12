@@ -36,7 +36,7 @@ $(document).ready(function(){
 	        }
 	    },
 	    order: [[0,'desc']],
-	    lengthMenu: [ 10, 20, 50]
+	    lengthMenu: [10, 20, 50]
 
 	});
 
