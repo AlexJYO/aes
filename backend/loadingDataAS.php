@@ -14,10 +14,17 @@
 		echo "Failed to connect to MySQL:  ".mysqli_connect_error();
 	}
 	if (isset($id)) {
-		$query = $db->connect()->prepare('SELECT *FROM request WHERE id = :id');
+		$query = $db->connect()->prepare('SELECT *FROM user WHERE id = :id');
 		$query->execute(['id' => $id]);
 		$row = $query->fetchAll();
-		$jsonstring = json_encode($row[0]);
+		$json['name_all']=$row[0]['nombre']." ".$row[0]['apellido'];
+
+		date_default_timezone_set("America/Mexico_City");
+		$today = getdate();
+		$day = $today['year'].'-'.$today['mon'].'-'.$today['mday']." ".$today['hours'].":".$today['minutes'].":".$today['seconds'];
+
+		$json['date']=$day;
+		$jsonstring = json_encode($json);
 		echo $jsonstring;
 	
 	}
