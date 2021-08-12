@@ -95,7 +95,22 @@ $(document).ready(function(){
 				$('#aes_cuenta').val(sol_data['cuenta']);
 				$('#aes_noSC_Sol').val(sol_data['no_sc_solped']);
 				$('#aes_fechaL').val(sol_data['fecha_liberacion']);
-				console.log(sol_data);
+				$('#aes_costoU').val(sol_data['costo_unitario']);
+				$('#aes_costoT1').val(sol_data['costo_total_1']);
+				$('#aes_moneda1').val(sol_data['moneda_1']);
+				$('#aes_tiempoE').val(sol_data['tiempo_estimado']);
+				$('#aes_aprovadorA').val(sol_data['aprobador_actual']);
+				$('#aes_compradorSAP').val(sol_data['comprador_sap']);
+				$('#aes_PO').val(sol_data['po']);
+				$('#aes_fechaPO').val(sol_data['fecha_po']);
+				$('#aes_proveedor').val(sol_data['proveedor']);
+				$('#aes_fechaR').val(sol_data['fecha_realizacion']);
+				$('#aes_noFactura').val(sol_data['no_factura']);
+				$('#aes_costoT2').val(sol_data['costo_total_2']);
+				$('#aes_moneda2').val(sol_data['moneda_2']);
+				$('#aes_IR').val(sol_data['ir']);
+				$('#aes_fechaIR').val(sol_data['fecha_ir']);
+				//console.log(sol_data);
 			}
 		});
 	}
