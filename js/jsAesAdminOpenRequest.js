@@ -42,8 +42,77 @@ $(document).ready(function(){
 			type: 'GET',
 			success: function(response){
 				const sol_data = JSON.parse(response);
+				//Datos del solicitante
 				$('h2').html('Solicitud Número '+sol_data['id']);
-				console.log(sol_data);
+				$('#aes_fechaE').val(sol_data['fecha_s']);
+				$('#aes_name').val(sol_data['nombre_s']);
+				$('#aes_jefe').val(sol_data['nombre_lgt']);
+				$('#aes_departamento').val(sol_data['departamento']);
+				$('#aes_tripulacion').val(sol_data['tripulacion']);
+				//Datos de la solicitud
+				$('#refaccion_descrip').val(sol_data['descripcion']);
+				$('#refaccion_cantidad').val(sol_data['cantidad']);
+				$('#refaccion_uMedida').val(sol_data['u_medida']);
+				$('#refaccion_noParte').val(sol_data['no_parte']);
+				$('#refaccion_codigoGM').val(sol_data['codigo_gm']);
+				$('#refaccion_marca').val(sol_data['marca']);
+				if(sol_data['unica_repetitiva']=="Unica"){
+					$("#flexRadioDefault1").prop("checked", true);
+					$("#flexRadioDefault2").prop("checked", false);
+					$('#aes_minMax').hide();
+					$('#aes_min').val('0');
+					$('#aes_max').val('0');
+
+				}else{
+					$("#flexRadioDefault1").prop("checked", false);
+					$("#flexRadioDefault2").prop("checked", true);
+					$('#aes_min').val(sol_data['min']);
+					$('#aes_max').val(sol_data['max']);
+				}
+				$('#refaccion_cMensual').val(sol_data['consumo_mensual']);
+				$('#refaccion_dUsa').val(sol_data['donde_se_usa']);
+				$('#refaccion_fInfo').val(sol_data['fuente_informacion']);
+				$('#refaccion_porque1').val(sol_data['porque1']);
+				$('#refaccion_porque2').val(sol_data['porque2']);
+				$('#refaccion_porque3').val(sol_data['porque3']);
+				if(sol_data['prioridad']=="Prioridad de seguridad")
+				{
+					$('#flexRadioDefault6').prop('checked',false);
+					$('#flexRadioDefault3').prop('checked',true);
+				}
+				if(sol_data['prioridad']=="Prioridad como paro total")
+				{
+					$('#flexRadioDefault6').prop('checked',false);
+					$('#flexRadioDefault4').prop('checked',true);
+				}
+				if(sol_data['prioridad']=="Prioridad como paro parcial")
+				{
+					$('#flexRadioDefault6').prop('checked',false);
+					$('#flexRadioDefault5').prop('checked',true);
+				}
+				$('#aes_alcanceT').val(sol_data['alcance_trabajo']);
+				$('#aes_dibujoT').val(sol_data['dibujo_tecnico']);
+				$('#aes_muestra').val(sol_data['muestra_foto']);
+				$('#aes_SC_Sol').val(sol_data['tipo_compra']);
+				$('#aes_cuenta').val(sol_data['cuenta']);
+				$('#aes_noSC_Sol').val(sol_data['no_sc_solped']);
+				$('#aes_fechaL').val(sol_data['fecha_liberacion']);
+				$('#aes_costoU').val(sol_data['costo_unitario']);
+				$('#aes_costoT1').val(sol_data['costo_total_1']);
+				$('#aes_moneda1').val(sol_data['moneda_1']);
+				$('#aes_tiempoE').val(sol_data['tiempo_estimado']);
+				$('#aes_aprovadorA').val(sol_data['aprobador_actual']);
+				$('#aes_compradorSAP').val(sol_data['comprador_sap']);
+				$('#aes_PO').val(sol_data['po']);
+				$('#aes_fechaPO').val(sol_data['fecha_po']);
+				$('#aes_proveedor').val(sol_data['proveedor']);
+				$('#aes_fechaR').val(sol_data['fecha_realizacion']);
+				$('#aes_noFactura').val(sol_data['no_factura']);
+				$('#aes_costoT2').val(sol_data['costo_total_2']);
+				$('#aes_moneda2').val(sol_data['moneda_2']);
+				$('#aes_IR').val(sol_data['ir']);
+				$('#aes_fechaIR').val(sol_data['fecha_ir']);
+				//console.log(sol_data);
 			}
 		});
 	}
@@ -54,14 +123,71 @@ $(document).ready(function(){
 			type: 'GET',
 			success: function(response){
 				const user_data = JSON.parse(response);
-				$('#aes_name').val(user_data['nombre']+ ' ' +user_data['apellido']);
-				$('#aes_jefe').val(user_data['jefe']);
-				$('#aes_departamento').val(user_data['departamento']);
-				$('#aes_tripulacion').val(user_data['tripulacion']);
-				
+				$('#aes_miembro').val(user_data['name_all']);
+				$('#aes_fechaUA').val(user_data['date']);
+				//console.log(user_data);
 
 			}
 		});
 	}
 	loadingData();
+	$('#adminSolicitud-form').submit(function(e){
+		const postData = {
+			fecha_s: $('#aes_fechaE').val(),
+			nombre_s: $('#aes_name').val(),
+			nombre_lgt: $('#aes_jefe').val(),
+			departamento: $('#aes_departamento').val(),
+			tripulacion: $('#aes_tripulacion').val(),
+
+			descripcion: $('#refaccion_descrip').val(),
+			cantidad: $('#refaccion_cantidad').val(),
+			u_medida: $('#refaccion_uMedida').val(),
+			no_parte: $('#refaccion_noParte').val(),
+			codigo_gm: $('#refaccion_codigoGM').val(),
+			marca: $('#refaccion_marca').val(),
+			unica_repetitiva:$('.typeC:checked').val(),
+			min: $('#aes_min').val(),
+			max: $('#aes_max').val(),
+			consumo_mensual: $('#refaccion_cMensual').val(),
+			donde_se_usa: $('#refaccion_dUsa').val(),
+			fuente_informacion: $('#refaccion_fInfo').val(),
+			porque1: $('#refaccion_porque1').val(),
+			porque2: $('#refaccion_porque2').val(),
+			porque3: $('#refaccion_porque3').val(),
+			prioridad: $('.prioridadS:checked').val(),
+
+			alcance_trabajo: $('#aes_alcanceT').val(),
+			dibujo_tecnico: $('#aes_dibujoT').val(),
+			muestra_foto: $('#aes_muestra').val(),
+			tipo_compra: $('#aes_SC_Sol').val(),
+			cuenta: $('#aes_cuenta').val(),
+			no_sc_solped: $('#aes_noSC_Sol').val(),
+			fecha_l: $('#aes_fechaL').val(),
+			costo_unitario: $('#aes_costoU').val(),
+			costo_total_1: $('#aes_costoT1').val(),
+			moneda_1: $('#aes_moneda1').val(),
+			tiempo_estimado: $('#aes_tiempoE').val(),
+			aprobador_actual: $('#aes_aprovadorA').val(),
+			comprador_sap: $('#aes_compradorSAP').val(),
+			po: $('#aes_PO').val(),
+			fecha_po: $('#aes_fechaPO').val(),
+			proveedor: $('#aes_proveedor').val(),
+			fecha_realizacion: $('#aes_fechaR').val(),
+			no_factura: $('#aes_noFactura').val(),
+			costo_total_2: $('#aes_costoT2').val(),
+			moneda_2: $('#aes_moneda2').val(),
+			ir: $('#aes_IR').val(),
+			fecha_ir: $('#aes_fechaIR').val()
+		};
+
+		$.post('../backend/aesSaveRequestAdm.php',postData,function(response){
+			// config();
+			// loadingData();
+			alert('Cambios realizados con exito');
+		});
+	});
+
+	$(document).on('click','#buttonCan',function(){
+		location.href = 'aesAdminSol.php';
+	});
 });
