@@ -75,31 +75,23 @@ $(document).ready(function(){
 			why3: $('#refaccion_porque3').val(),
 			priority: $('.prioridadS:checked').val()
 
-
-			//departamento: $('#aes_departamento option:selected').html(),
-			//tripulacion: $('#aes_tripulacion option:selected').html(),
-			
-
-
 		};
-		//console.log(postData);
+
 		$.post('../backend/aesNewSol.php',postData,function(response){
 			if (response==1) {
 				alert('Registro exitoso.');
 				$('#solicitud-form').trigger('reset');
 				location.reload();
 			}else{
+				
 				alert('Error: No se pudo completar el registro');
 			}
 			
 		});
 
-		
-		// console.log($('#refaccion_uMedida').val());
-		// console.log($('.typeC:checked').val());
-		// console.log($('.prioridadS:checked').val());
 		e.preventDefault();
 	});
+
 	function loadingData(){
 		$.ajax({
 			url: '../backend/loadingData.php',
