@@ -41,6 +41,8 @@
 		$json['porque2']=$row[0]['porque2'];
 		$json['porque3']=$row[0]['porque3'];
 		$json['prioridad']=$row[0]['prioridad'];
+		$json['nombre_r']=$row[0]['nombre_r'];
+		$json['fecha_r']=$row[0]['fecha_r'];
 		$json['alcance_trabajo']=$row[0]['alcance_trabajo'];
 		$json['dibujo_tecnico']=$row[0]['dibujo_tecnico'];
 		$json['muestra_foto']=$row[0]['muestra_foto'];
