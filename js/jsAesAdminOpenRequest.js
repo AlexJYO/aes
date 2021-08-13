@@ -46,7 +46,6 @@ $(document).ready(function(){
 				$('h2').html('Solicitud Número '+sol_data['id']);
 				$('#aes_status').val(sol_data['status']);
 				const status = $('#aes_status').val();
-				console.log(status);
 				if(status=="En Proceso" || status=="" || status==null){
 					$("#aes_status").css("color", "blue");
 				}else{
@@ -139,6 +138,9 @@ $(document).ready(function(){
 					$('#flexRadioDefault6').prop('checked',false);
 					$('#flexRadioDefault5').prop('checked',true);
 				}
+				//Seguimiento AES
+				$('#aes_miembro').val(sol_data['nombre_r']);
+				$('#aes_fechaUA').val(sol_data['fecha_r']);
 				$('#aes_alcanceT').val(sol_data['alcance_trabajo']);
 				$('#aes_dibujoT').val(sol_data['dibujo_tecnico']);
 				$('#aes_muestra').val(sol_data['muestra_foto']);
@@ -166,20 +168,7 @@ $(document).ready(function(){
 		});
 	}
 
-	function loadingData(){
-		$.ajax({
-			url: '../backend/loadingDataAS.php',
-			type: 'GET',
-			success: function(response){
-				const user_data = JSON.parse(response);
-				$('#aes_miembro').val(user_data['name_all']);
-				$('#aes_fechaUA').val(user_data['date']);
-				//console.log(user_data);
-
-			}
-		});
-	}
-	loadingData();
+	
 	$('#adminSolicitud-form').submit(function(e){
 		const postData = {
 			fecha_s: $('#aes_fechaE').val(),
