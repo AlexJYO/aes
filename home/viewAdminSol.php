@@ -7,8 +7,17 @@
 		<div class="card">
 			<div class="row g-3 card-body" id="seccion">
 				<div class="col-md-6">
-					<label class="form-label" id="basic-addon1">Fecha de Elaboracion</label>	
+					<label class="form-label">Fecha de Elaboracion</label>	
 					<input type="text" id="aes_fechaE" class="form-control" disabled="">
+				</div>
+				<div class="col-md-6">
+					<label class="form-label">Estado de la solicitud</label>	
+					<select class="form-select" id="aes_status">
+		    			<option selected>Elige...</option>
+		    			<option value="En Proceso" style="color:blue">En Proceso</option>
+		    			<option value="Cancelado" style="color:red">Cancelado</option>
+		    			<option value="Finalizado" style="color:green">Finalizado</option>
+		  			</select>
 				</div>
 				<h4 class="datos-solicitante">Datos del Usuario</h4>
 				<div class="col-md-6">
@@ -83,7 +92,7 @@
 
 				<div class="card">
 					<div class="card-body">
-						<div class="row g-3" id="seccion">
+						<div class="row g-3" id="aes_tipo_compra">
 							<label class="form-label" for="refaccion_tCompra">Tipo de compra*</label>
 							<div class="form-check">
 		  						<input class="form-check-input typeC" type="radio" name="flexRadioDefault1" value="Unica" id="flexRadioDefault1" checked>
@@ -98,16 +107,16 @@
 		  						</label>
 							</div>
 						</div>
-						<div id="aes_minMax">
+						<div>
 							<label class="form-label mt-5" for="refaccion_pSugerido">Parametro sugerido</label>
 							<div class="row g-3 ">
 								<div class="col-md-6">
 									<label class="input-group-text" id="basic-addon1">Minimo</label>	
-									<input type="text" id="aes_min" class="form-control">
+									<input type="text" id="aes_min" class="form-control aes_minMax">
 								</div>		
 								<div class="col-md-6">
 									<label class="input-group-text" id="basic-addon1">Maximo</label>			
-									<input type="text" id="aes_max" class="form-control">		
+									<input type="text" id="aes_max" class="form-control aes_minMax">		
 								</div>	
 							</div>
 						</div>
@@ -131,15 +140,15 @@
 					<label class="form-label" for="refaccion_justificacion">Justifica de forma correcta la compra de la refaccion*</label>
 					<div class="form-group input-group">
 						<label class="input-group-text">¿Por que?</label>			
-						<textarea id="refaccion_porque1" class="form-control" required></textarea>
+						<textarea id="refaccion_porque1" class="form-control whys" required></textarea>
 					</div>
 					<div class="form-group input-group">	
 						<span class="input-group-text">¿Por que?</span>		
-						<textarea id="refaccion_porque2" class="form-control" required></textarea>
+						<textarea id="refaccion_porque2" class="form-control whys" required></textarea>
 					</div>
 					<div class="form-group input-group">
 						<span class="input-group-text">¿Por que?</span>			
-						<textarea id="refaccion_porque3" class="form-control" required></textarea>
+						<textarea id="refaccion_porque3" class="form-control whys" required></textarea>
 					</div>
 				</div>
 				<div>
