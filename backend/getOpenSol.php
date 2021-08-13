@@ -53,6 +53,7 @@
 		$json['tiempo_estimado']=$row[0]['tiempo_estimado'];
 		$json['aprobador_actual']=$row[0]['aprobador_actual'];
 		$json['comprador_sap']=$row[0]['comprador_sap'];
+		$json['po']=$row[0]['po'];
 		$json['fecha_po']=$row[0]['fecha_po'];
 		$json['proveedor']=$row[0]['proveedor'];
 		$json['fecha_realizacion']=$row[0]['fecha_realizacion'];
