@@ -107,7 +107,7 @@ $(document).ready(function(){
 				if(sol_data['unica_repetitiva']=="Unica"){
 					$("#flexRadioDefault1").prop("checked", true);
 					$("#flexRadioDefault2").prop("checked", false);
-					$('#aes_minMax').hide();
+					$('#aes_tipoMM').hide();
 					$('#aes_min').val('0');
 					$('#aes_max').val('0');
 
@@ -230,9 +230,9 @@ $(document).ready(function(){
 		const UR = $('.typeC:checked').val();
 		if(UR == "Repetitiva")
 		{
-			$('#aes_minMax').show();
+			$('#aes_tipoMM').show();
 		}else{
-			$('#aes_minMax').hide();
+			$('#aes_tipoMM').hide();
 		}
 	});
 	
