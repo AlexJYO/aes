@@ -109,7 +109,7 @@
 						</div>
 						<div>
 							<label class="form-label mt-5" for="refaccion_pSugerido">Parametro sugerido</label>
-							<div class="row g-3 ">
+							<div class="row g-3" id="aes_tipoMM">
 								<div class="col-md-6">
 									<label class="input-group-text" id="basic-addon1">Minimo</label>	
 									<input type="text" id="aes_min" class="form-control aes_minMax">
