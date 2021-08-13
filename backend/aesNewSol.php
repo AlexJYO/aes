@@ -72,12 +72,12 @@
 		$priority = stripslashes($_REQUEST['priority']);
 		$priority = mysqli_real_escape_string($conn,$priority);
 
-		
+		$status = 'En Proceso';
 
 
 		//Insertar elemento
 		//Se usan prepare y execute para realizar la insersion de un nuevo elemento
-		$query = $db->connect()->prepare("INSERT into request (fecha_s, gmin, nombre_s, nombre_lgt, departamento, tripulacion, descripcion, cantidad, u_medida, no_parte, codigo_gm, marca, unica_repetitiva, min, max, consumo_mensual, donde_se_usa, fuente_informacion, porque1, porque2, porque3, prioridad) VALUES ('$date_s','$user', '$name', '$lgt', '$department', '$crew', '$description', '$quantity', '$measure', '$noParte', '$gmCode', '$brand', '$buyType', '$min', '$max', '$monthlyCon', '$whereUse', '$sourceInfo', '$why1', '$why2', '$why3', '$priority')");
+		$query = $db->connect()->prepare("INSERT into request (fecha_s, gmin, nombre_s, nombre_lgt, departamento, tripulacion, descripcion, cantidad, u_medida, no_parte, codigo_gm, marca, unica_repetitiva, min, max, consumo_mensual, donde_se_usa, fuente_informacion, porque1, porque2, porque3, prioridad, status) VALUES ('$date_s','$user', '$name', '$lgt', '$department', '$crew', '$description', '$quantity', '$measure', '$noParte', '$gmCode', '$brand', '$buyType', '$min', '$max', '$monthlyCon', '$whereUse', '$sourceInfo', '$why1', '$why2', '$why3', '$priority', '$status')");
 		$result=$query->execute();
 		if ($result) {
 			$banReg=1;

@@ -20,6 +20,7 @@
 		$row = $query->fetchAll();
 		$json['id']=$row[0]['id'];
 		$json['fecha_s']=$row[0]['fecha_s'];
+		$json['status']=$row[0]['status'];
 		$json['nombre_s']=$row[0]['nombre_s'];
 		$json['nombre_lgt']=$row[0]['nombre_lgt'];
 		$json['departamento']=$row[0]['departamento'];
