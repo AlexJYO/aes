@@ -187,6 +187,15 @@ $(document).ready(function(){
 		});
 	});
 
+	$(".typeC").change(function(){
+		const UR = $('.typeC:checked').val();
+		if(UR == "Repetitiva")
+		{
+			$('#aes_minMax').show();
+		}else{
+			$('#aes_minMax').hide();
+		}
+	});
 	$(document).on('click','#buttonCan',function(){
 		location.href = 'aesAdminSol.php';
 	});
