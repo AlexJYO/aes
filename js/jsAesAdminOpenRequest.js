@@ -326,4 +326,7 @@ $(document).ready(function(){
 	$(document).on('click','#buttonCan',function(){
 		location.href = 'aesAdminSol.php';
 	});
+	$(document).on('click','#buttonImp',function(){
+		window.open('imprimir.php', '_blank');
+	});
 });

@@ -35,7 +35,7 @@ $(document).ready(function(){
 	}, 120000);
 	
 	$(document).on('click','#buttonCan',function(){
-		location.href = 'aesAdminInfo.php';
+		location.href = 'aesUserInfo.php';
 	});
 
 	$(document).on('change','#flexRadioDefault2',function(){
@@ -87,6 +87,7 @@ $(document).ready(function(){
 			if (response==1) {
 				alert('Registro exitoso.');
 				$('#solicitud-form').trigger('reset');
+				window.open('imprimir.php', '_blank');
 				location.reload();
 			}else{
 				alert('Error: No se pudo completar el registro');

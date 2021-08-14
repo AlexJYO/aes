@@ -78,9 +78,11 @@ $(document).ready(function(){
 		};
 
 		$.post('../backend/aesNewSol.php',postData,function(response){
+			console.log(response);
 			if (response==1) {
 				alert('Registro exitoso.');
 				$('#solicitud-form').trigger('reset');
+				window.open('imprimir.php', '_blank');
 				location.reload();
 			}else{
 				
@@ -108,7 +110,7 @@ $(document).ready(function(){
 		});
 	}
 	loadingData();
-
+	
 
 
 
