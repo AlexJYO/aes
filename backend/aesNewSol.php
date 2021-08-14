@@ -78,7 +78,13 @@
 	$result=$query->execute();
 	if ($result) {
 		$banReg=1;
+		$query = $db->connect()->prepare('SELECT id FROM request WHERE id = (SELECT MAX(id) FROM request)');
+		$query->execute();
+		$row = $query->fetchAll();
+		$_SESSION['sol']=$row[0]['id'];
 	}
+
+	
 
 	echo $banReg;
 ?>
