@@ -174,6 +174,7 @@
 			Guardar
 		</button>
 		<button type="button" class="btn btn-warning" id="buttonCan">Cancelar</button>
+		
 	</div>
 	</form>
-	</div>
+</div>

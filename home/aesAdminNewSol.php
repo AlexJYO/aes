@@ -57,6 +57,7 @@
     </div>
 
 	<?php include('libs.php');?>
+	
 	<script type="text/javascript" src="../js/jsAesNewSol.js"></script>
 
 

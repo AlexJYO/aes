@@ -301,6 +301,9 @@
 			<button type="button" class="btn btn-warning" id="buttonCan">
 				Cancelar
 			</button>
+			<button type="button" class="btn btn-info" id="buttonImp">
+				Imprimir
+			</button>
 		</div>
 
 	</form>
