@@ -34,7 +34,7 @@ $(document).ready(function(){
 				$('#refaccion_porque2').val(sol_data['porque2']);
 				$('#refaccion_porque3').val(sol_data['porque3']);
 				$('#aes_prioridad').html(sol_data['prioridad']);
-				
+				window.print();
 			}
 		});
 	}

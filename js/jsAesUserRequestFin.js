@@ -31,7 +31,7 @@ $(document).ready(function(){
   	comprobamosSesion();
 	}, 120000);
 
-    $('#tableURequest').DataTable({
+    $('#tableURequestFin').DataTable({
 		 language: {
 	        processing:     "Procesando...",
 	        search:         "Buscar:",

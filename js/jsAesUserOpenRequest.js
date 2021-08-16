@@ -236,95 +236,9 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('#aes_status').change(function(){
-		const status = $('#aes_status').val();
-		if(status=="En Proceso"){
-			$("#aes_status").css("color", "blue");
-		}
-		if(status=="Cancelado"){
-			$("#aes_status").css("color", "red");
-		}
-		if(status=="Finalizado"){
-			$("#aes_status").css("color", "green");
-		}
-		if(status=="En Proceso" || status=="" || status==null){
-			$("#aes_status").css("color", "blue");
-			$('#refaccion_descrip').prop('disabled', false);
-			$('#refaccion_cantidad').prop('disabled', false);
-			$('#refaccion_uMedida').prop('disabled', false);
-			$('#refaccion_noParte').prop('disabled', false);
-			$('#refaccion_codigoGM').prop('disabled', false);
-			$('#refaccion_marca').prop('disabled', false);
-			$('.typeC').prop('disabled', false);
-			$('.aes_minMax').prop('disabled', false);
-			$('#refaccion_cMensual').prop('disabled', false);
-			$('#refaccion_dUsa').prop('disabled', false);
-			$('#refaccion_fInfo').prop('disabled', false);
-			$('.whys').prop('disabled', false);
-			$('.prioridadS').prop('disabled', false);
-			$('#aes_alcanceT').prop('disabled', false);
-			$('#aes_dibujoT').prop('disabled', false);
-			$('#aes_muestra').prop('disabled', false);
-			$('#aes_SC_Sol').prop('disabled', false);
-			$('#aes_cuenta').prop('disabled', false);
-			$('#aes_noSC_Sol').prop('disabled', false);
-			$('#aes_fechaL').prop('disabled', false);
-			$('#aes_costoU').prop('disabled', false);
-			$('#aes_costoT1').prop('disabled', false);
-			$('#aes_moneda1').prop('disabled', false);
-			$('#aes_tiempoE').prop('disabled', false);
-			$('#aes_aprovadorA').prop('disabled', false);
-			$('#aes_compradorSAP').prop('disabled', false);
-			$('#aes_PO').prop('disabled', false);
-			$('#aes_fechaPO').prop('disabled', false);
-			$('#aes_proveedor').prop('disabled', false);
-			$('#aes_fechaR').prop('disabled', false);
-			$('#aes_noFactura').prop('disabled', false);
-			$('#aes_costoT2').prop('disabled', false);
-			$('#aes_moneda2').prop('disabled', false);
-			$('#aes_IR').prop('disabled', false);
-			$('#aes_fechaIR').prop('disabled', false);
-		}else{
-			$('#refaccion_descrip').prop('disabled', true);
-			$('#refaccion_cantidad').prop('disabled', true);
-			$('#refaccion_uMedida').prop('disabled', true);
-			$('#refaccion_noParte').prop('disabled', true);
-			$('#refaccion_codigoGM').prop('disabled', true);
-			$('#refaccion_marca').prop('disabled', true);
-			$('.typeC').prop('disabled', true);
-			$('.aes_minMax').prop('disabled', true);
-			$('#refaccion_cMensual').prop('disabled', true);
-			$('#refaccion_dUsa').prop('disabled', true);
-			$('#refaccion_fInfo').prop('disabled', true);
-			$('.whys').prop('disabled', true);
-			$('.prioridadS').prop('disabled', true);
-			$('#aes_alcanceT').prop('disabled', true);
-			$('#aes_dibujoT').prop('disabled', true);
-			$('#aes_muestra').prop('disabled', true);
-			$('#aes_SC_Sol').prop('disabled', true);
-			$('#aes_cuenta').prop('disabled', true);
-			$('#aes_noSC_Sol').prop('disabled', true);
-			$('#aes_fechaL').prop('disabled', true);
-			$('#aes_costoU').prop('disabled', true);
-			$('#aes_costoT1').prop('disabled', true);
-			$('#aes_moneda1').prop('disabled', true);
-			$('#aes_tiempoE').prop('disabled', true);
-			$('#aes_aprovadorA').prop('disabled', true);
-			$('#aes_compradorSAP').prop('disabled', true);
-			$('#aes_PO').prop('disabled', true);
-			$('#aes_fechaPO').prop('disabled', true);
-			$('#aes_proveedor').prop('disabled', true);
-			$('#aes_fechaR').prop('disabled', true);
-			$('#aes_noFactura').prop('disabled', true);
-			$('#aes_costoT2').prop('disabled', true);
-			$('#aes_moneda2').prop('disabled', true);
-			$('#aes_IR').prop('disabled', true);
-			$('#aes_fechaIR').prop('disabled', true);
-		}
 
-	})
 	$(document).on('click','#buttonCan',function(){
-		location.href = 'aesUserSol.php';
+		location.href = 'aesUserInfo.php';
 	});
 	$(document).on('click','#buttonImp',function(){
 		window.open('imprimir.php', '_blank');
