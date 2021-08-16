@@ -97,8 +97,8 @@
 		  						</label>
 							</div>
 							<div class="form-check">
-		  						<input class="form-check-input typeC" type="radio" name="flexRadioDefault1" value="Repetitiva" id="flexRadioDefault2">
-		  						<label class="form-check-label" for="flexRadioDefault2" disabled>
+		  						<input class="form-check-input typeC" type="radio" name="flexRadioDefault1" value="Repetitiva" id="flexRadioDefault2" disabled>
+		  						<label class="form-check-label" for="flexRadioDefault2" >
 		    						Repetitiva
 		  						</label>
 							</div>
