@@ -108,6 +108,7 @@ $(document).ready(function(){
 					$("#flexRadioDefault1").prop("checked", true);
 					$("#flexRadioDefault2").prop("checked", false);
 					$('#aes_tipoMM').hide();
+					$('#label_minMax').hide();
 					$('#aes_min').val('0');
 					$('#aes_max').val('0');
 
@@ -231,8 +232,10 @@ $(document).ready(function(){
 		if(UR == "Repetitiva")
 		{
 			$('#aes_tipoMM').show();
+			$('#label_minMax').show();
 		}else{
 			$('#aes_tipoMM').hide();
+			$('#label_minMax').hide();
 		}
 	});
 	
