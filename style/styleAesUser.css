@@ -176,7 +176,9 @@ ul ul a {
 #sidebarCollapse{
     background-color: #0971c9cf; 
 }
-
+#tableURequest_wrapper{
+    zoom: 92%;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
