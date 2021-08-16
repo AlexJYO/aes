@@ -55,15 +55,15 @@
 
 				<div class="form-label">
 					<label class="form-label" id="basic-addon1">Descripcion*</label>			
-					<textarea id="refaccion_descrip" class="form-control" style="height: 100px;"></textarea>
+					<textarea id="refaccion_descrip" class="form-control" style="height: 100px;" disabled></textarea>
 				</div>
 				<div class="col-md-6">	
 					<label class="form-label" id="basic-addon1">Cantidad*</label>		
-					<input type="text" id="refaccion_cantidad" class="form-control">
+					<input type="text" id="refaccion_cantidad" class="form-control" disabled>
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" for="refaccion_uMedida">Unidad de medida*</label>
-					  	<select class="form-select" id="refaccion_uMedida">
+					  	<select class="form-select" id="refaccion_uMedida" disabled>
 						    <option selected>Elige...</option>
 						    <option value="Piezas">Piezas</option>
 						    <option value="Metros">Metros</option>
@@ -75,15 +75,15 @@
 				</div>
 				<div class="col-md-6">
 					<span class="form-label" id="basic-addon1">No. de Parte*</span>			
-					<input type="text" id="refaccion_noParte" placeholder="Modelo o Numero de Parte" class="form-control">
+					<input type="text" id="refaccion_noParte" placeholder="Modelo o Numero de Parte" class="form-control" disabled>
 				</div>
 				<div class="col-md-6">
 					<span class="form-label" id="basic-addon1">Codigo GM</span>			
-					<input type="text" id="refaccion_codigoGM" placeholder="Codigo comun o GM (8 Digitos)" class="form-control">
+					<input type="text" id="refaccion_codigoGM" placeholder="Codigo comun o GM (8 Digitos)" class="form-control" disabled>
 				</div>
 				<div class="form-label">
 					<span class="form-label" id="basic-addon1">Marca*</span>			
-					<input type="text" id="refaccion_marca" class="form-control">
+					<input type="text" id="refaccion_marca" class="form-control" disabled>
 				</div>
 
 				<div class="card">
@@ -91,14 +91,14 @@
 						<div class="row g-3" id="aes_tipo_compra">
 							<label class="form-label" for="refaccion_tCompra">Tipo de compra*</label>
 							<div class="form-check">
-		  						<input class="form-check-input typeC" type="radio" name="flexRadioDefault1" value="Unica" id="flexRadioDefault1">
+		  						<input class="form-check-input typeC" type="radio" name="flexRadioDefault1" value="Unica" id="flexRadioDefault1" disabled>
 		  						<label class="form-check-label" for="flexRadioDefault1">
 		    						Unica
 		  						</label>
 							</div>
 							<div class="form-check">
 		  						<input class="form-check-input typeC" type="radio" name="flexRadioDefault1" value="Repetitiva" id="flexRadioDefault2">
-		  						<label class="form-check-label" for="flexRadioDefault2">
+		  						<label class="form-check-label" for="flexRadioDefault2" disabled>
 		    						Repetitiva
 		  						</label>
 							</div>
@@ -112,7 +112,7 @@
 								</div>		
 								<div class="col-md-6">
 									<label class="input-group-text" id="basic-addon1">Maximo</label>			
-									<input type="text" id="aes_max" class="form-control aes_minMax">		
+									<input type="text" id="aes_max" class="form-control aes_minMax" disabled>		
 								</div>	
 							</div>
 						</div>
@@ -122,53 +122,53 @@
 
 				<div class="form-label">
 					<label class="form-label">Consumo Mensual*</label>			
-					<input type="text" id="refaccion_cMensual" class="form-control">
+					<input type="text" id="refaccion_cMensual" class="form-control" disabled>
 				</div>
 				<div class="form-label">	
 					<label class="form-label">Donde se usa*</label>		
-					<input type="text" id="refaccion_dUsa" placeholder="Donde se usa el (Equipo, Maquina o Herramineta)" class="form-control">
+					<input type="text" id="refaccion_dUsa" placeholder="Donde se usa el (Equipo, Maquina o Herramineta)" class="form-control" disabled>
 				</div>
 				<div class="form-label">
 					<label class="form-label">Fuente de Informacion*</label>			
-					<input type="text" id="refaccion_fInfo" placeholder="Fuente de Informacion (Manual, Catalogo, link)" class="form-control">
+					<input type="text" id="refaccion_fInfo" placeholder="Fuente de Informacion (Manual, Catalogo, link)" class="form-control" disabled>
 				</div>
 				<div class="form-label">
 					<label class="form-label" for="refaccion_justificacion">Justifica de forma correcta la compra de la refaccion*</label>
 					<div class="form-group input-group">
 						<label class="input-group-text">¿Por que?</label>			
-						<textarea id="refaccion_porque1" class="form-control whys"></textarea>
+						<textarea id="refaccion_porque1" class="form-control whys" disabled></textarea>
 					</div>
 					<div class="form-group input-group">	
 						<span class="input-group-text">¿Por que?</span>		
-						<textarea id="refaccion_porque2" class="form-control whys"></textarea>
+						<textarea id="refaccion_porque2" class="form-control whys" disabled></textarea>
 					</div>
 					<div class="form-group input-group">
 						<span class="input-group-text">¿Por que?</span>			
-						<textarea id="refaccion_porque3" class="form-control whys"></textarea>
+						<textarea id="refaccion_porque3" class="form-control whys" disabled></textarea>
 					</div>
 				</div>
 				<div >
 					<label class="form-label" for="refaccion_prioridad">Selecciona la prioridad*</label>
 					<div class="form-check" >
-		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad de seguridad" id="flexRadioDefault3" >
+		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad de seguridad" id="flexRadioDefault3" disabled>
 		  				<label class="form-check-label" for="flexRadioDefault3">
 		    				1. Prioridad de seguridad
 		  				</label>
 					</div>
 					<div class="form-check" >
-		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad como paro total" id="flexRadioDefault4" >
+		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad como paro total" id="flexRadioDefault4" disabled>
 		  				<label class="form-check-label" for="flexRadioDefault4">
 		    				2. Prioridad como paro total
 		  				</label>
 					</div>
 					<div class="form-check">
-		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad como paro parcial" id="flexRadioDefault5">
+		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad como paro parcial" id="flexRadioDefault5" disabled>
 		  				<label class="form-check-label" for="flexRadioDefault5">
 		    				3. Prioridad como paro parcial
 		  				</label>
 					</div>
 					<div class="form-check">
-		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Sin influencia" id="flexRadioDefault6"checked>
+		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Sin influencia" id="flexRadioDefault6"checked disabled>
 		  				<label class="form-check-label" for="flexRadioDefault6">
 		    				4. Sin influencia
 		  				</label>
