@@ -36,6 +36,18 @@
 			<td><?php echo $row['marca']; ?></td>
 			<td><?php echo $row['donde_se_usa']; ?></td>
 			<td><?php echo $row['prioridad']; ?></td>
+			<?php $colorS='';
+				if ($row['status']=='Cancelado') {
+					$colorS='style="color: red;"';
+				}else{
+					if ($row['status']=='Finalizado') {
+						$colorS='style="color: green;"';
+					}else{
+						$colorS='style="color: blue;"';
+					}
+				}
+			?>
+			<td <?php echo $colorS;?>><?php echo $row['status']; ?></td>
 			<td style=" border: inset 0pt">
 				<button class="open-sol btn btn-primary">Abrir</button>
 			</td>
