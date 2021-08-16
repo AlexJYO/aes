@@ -1,6 +1,9 @@
 <?php
 
+	//Cada acción actualizará la fecha inicial
 	session_start();
+	$_SESSION['fecha']=date("Y-n-j H:i:s");
+	//Con estos dos comandas se actualiza
 	$banReg = 0;
 	include_once 'database.php';
 	//Se crea un objeto Database
