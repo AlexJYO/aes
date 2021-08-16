@@ -15,11 +15,12 @@
 		die("Failed to connect to MySQL:  ".mysqli_connect_error()); 
 	}
 	$gmin = $_SESSION['gmin'];
+	$status= 'En Proceso';
 	// $jefe = $_SESSION['jefe'];
 	// $query = $db->connect()->prepare('SELECT * FROM request WHERE gmin = :gmin OR nombre_lgt = :jefe');
 	// $query->execute(['gmin' => $gmin, 'jefe' => $jefe]);
-	$query = $db->connect()->prepare('SELECT * FROM request WHERE gmin = :gmin');
-	$query->execute(['gmin' => $gmin]);
+	$query = $db->connect()->prepare('SELECT * FROM request WHERE gmin = :gmin AND status = :status');
+	$query->execute(['gmin' => $gmin, 'status' => $status]);
 	
 	$rows = $query->fetchAll();
 	$i=0;
