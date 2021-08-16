@@ -55,15 +55,15 @@
 
 				<div class="form-label">
 					<label class="form-label" id="basic-addon1">Descripcion*</label>			
-					<textarea id="refaccion_descrip" class="form-control" style="height: 100px;" required></textarea>
+					<textarea id="refaccion_descrip" class="form-control" style="height: 100px;"></textarea>
 				</div>
 				<div class="col-md-6">	
 					<label class="form-label" id="basic-addon1">Cantidad*</label>		
-					<input type="text" id="refaccion_cantidad" class="form-control" required>
+					<input type="text" id="refaccion_cantidad" class="form-control">
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" for="refaccion_uMedida">Unidad de medida*</label>
-					  	<select class="form-select" id="refaccion_uMedida" required>
+					  	<select class="form-select" id="refaccion_uMedida">
 						    <option selected>Elige...</option>
 						    <option value="Piezas">Piezas</option>
 						    <option value="Metros">Metros</option>
@@ -75,7 +75,7 @@
 				</div>
 				<div class="col-md-6">
 					<span class="form-label" id="basic-addon1">No. de Parte*</span>			
-					<input type="text" id="refaccion_noParte" placeholder="Modelo o Numero de Parte" class="form-control" required>
+					<input type="text" id="refaccion_noParte" placeholder="Modelo o Numero de Parte" class="form-control">
 				</div>
 				<div class="col-md-6">
 					<span class="form-label" id="basic-addon1">Codigo GM</span>			
@@ -83,7 +83,7 @@
 				</div>
 				<div class="form-label">
 					<span class="form-label" id="basic-addon1">Marca*</span>			
-					<input type="text" id="refaccion_marca" class="form-control" required>
+					<input type="text" id="refaccion_marca" class="form-control">
 				</div>
 
 				<div class="card">
@@ -91,7 +91,7 @@
 						<div class="row g-3" id="aes_tipo_compra">
 							<label class="form-label" for="refaccion_tCompra">Tipo de compra*</label>
 							<div class="form-check">
-		  						<input class="form-check-input typeC" type="radio" name="flexRadioDefault1" value="Unica" id="flexRadioDefault1" checked>
+		  						<input class="form-check-input typeC" type="radio" name="flexRadioDefault1" value="Unica" id="flexRadioDefault1">
 		  						<label class="form-check-label" for="flexRadioDefault1">
 		    						Unica
 		  						</label>
@@ -108,7 +108,7 @@
 							<div class="row g-3" id="aes_tipoMM">
 								<div class="col-md-6">
 									<label class="input-group-text" id="basic-addon1">Minimo</label>	
-									<input type="text" id="aes_min" class="form-control aes_minMax">
+									<input type="text" id="aes_min" class="form-control aes_minMax" disabled>
 								</div>		
 								<div class="col-md-6">
 									<label class="input-group-text" id="basic-addon1">Maximo</label>			
@@ -122,41 +122,41 @@
 
 				<div class="form-label">
 					<label class="form-label">Consumo Mensual*</label>			
-					<input type="text" id="refaccion_cMensual" class="form-control" required>
+					<input type="text" id="refaccion_cMensual" class="form-control">
 				</div>
 				<div class="form-label">	
 					<label class="form-label">Donde se usa*</label>		
-					<input type="text" id="refaccion_dUsa" placeholder="Donde se usa el (Equipo, Maquina o Herramineta)" class="form-control" required>
+					<input type="text" id="refaccion_dUsa" placeholder="Donde se usa el (Equipo, Maquina o Herramineta)" class="form-control">
 				</div>
 				<div class="form-label">
 					<label class="form-label">Fuente de Informacion*</label>			
-					<input type="text" id="refaccion_fInfo" placeholder="Fuente de Informacion (Manual, Catalogo, link)" class="form-control" required>
+					<input type="text" id="refaccion_fInfo" placeholder="Fuente de Informacion (Manual, Catalogo, link)" class="form-control">
 				</div>
 				<div class="form-label">
 					<label class="form-label" for="refaccion_justificacion">Justifica de forma correcta la compra de la refaccion*</label>
 					<div class="form-group input-group">
 						<label class="input-group-text">¿Por que?</label>			
-						<textarea id="refaccion_porque1" class="form-control whys" required></textarea>
+						<textarea id="refaccion_porque1" class="form-control whys"></textarea>
 					</div>
 					<div class="form-group input-group">	
 						<span class="input-group-text">¿Por que?</span>		
-						<textarea id="refaccion_porque2" class="form-control whys" required></textarea>
+						<textarea id="refaccion_porque2" class="form-control whys"></textarea>
 					</div>
 					<div class="form-group input-group">
 						<span class="input-group-text">¿Por que?</span>			
-						<textarea id="refaccion_porque3" class="form-control whys" required></textarea>
+						<textarea id="refaccion_porque3" class="form-control whys"></textarea>
 					</div>
 				</div>
-				<div>
+				<div >
 					<label class="form-label" for="refaccion_prioridad">Selecciona la prioridad*</label>
-					<div class="form-check">
-		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad de seguridad" id="flexRadioDefault3">
+					<div class="form-check" >
+		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad de seguridad" id="flexRadioDefault3" >
 		  				<label class="form-check-label" for="flexRadioDefault3">
 		    				1. Prioridad de seguridad
 		  				</label>
 					</div>
-					<div class="form-check">
-		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad como paro total" id="flexRadioDefault4">
+					<div class="form-check" >
+		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad como paro total" id="flexRadioDefault4" >
 		  				<label class="form-check-label" for="flexRadioDefault4">
 		    				2. Prioridad como paro total
 		  				</label>
@@ -168,7 +168,7 @@
 		  				</label>
 					</div>
 					<div class="form-check">
-		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Sin influencia" id="flexRadioDefault6" checked>
+		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Sin influencia" id="flexRadioDefault6"checked>
 		  				<label class="form-check-label" for="flexRadioDefault6">
 		    				4. Sin influencia
 		  				</label>

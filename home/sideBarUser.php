@@ -24,6 +24,8 @@
         <ul class="list-unstyled">
           <li><a href="aesUserNewSol.php" >Nueva</a></li>
           <li><a href="aesUserSol.php" >Mis Solicitudes</a></li>
+          <li><a href="aesSolAct.php" >Solicitudes Activas</a></li>
+          <li><a href="aesSolFin.php" >Solicitudes finalizadas</a></li>
           <!-- <li><a href="#" >Busqueda</a></li> -->
         </ul>
       </div>
