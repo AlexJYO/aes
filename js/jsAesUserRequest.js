@@ -35,8 +35,8 @@ $(document).ready(function(){
 	            sortDescending: ": Activar para ordenar la columna de manera descendente"
 	        }
 	    },
-	    //order: [[0,'desc']],
-	    lengthMenu: [ 5, 10, 20]
+	    order: [[0,'desc']],
+	    lengthMenu: [ 10, 20, 50]
 
 	});
 
@@ -44,7 +44,7 @@ $(document).ready(function(){
 		let element = $(this)[0].parentElement.parentElement;
 		let id = $(element).attr('userId');
 		$.post('../backend/open-sol.php',{id},function(response){
-			location.href ="aesAdmOpenSol.php";
+			location.href ="aesUserOpenSol.php";
 		});
 	});
 });
