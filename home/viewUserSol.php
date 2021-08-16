@@ -104,7 +104,7 @@
 							</div>
 						</div>
 						<div>
-							<label class="form-label mt-5" for="refaccion_pSugerido">Parametro sugerido</label>
+							<label class="form-label mt-5" for="refaccion_pSugerido" id="label_minMax">Parametro sugerido</label>
 							<div class="row g-3" id="aes_tipoMM">
 								<div class="col-md-6">
 									<label class="input-group-text" id="basic-addon1">Minimo</label>	
