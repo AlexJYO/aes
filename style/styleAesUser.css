@@ -176,7 +176,7 @@ ul ul a {
 #sidebarCollapse{
     background-color: #0971c9cf; 
 }
-#tableURequest_wrapper{
+#tableURequest_wrapper,#tableURequestAct_wrapper,#tableURequestFin_wrapper{
     zoom: 92%;
 }
 /* ---------------------------------------------------
