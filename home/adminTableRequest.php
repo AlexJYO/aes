@@ -9,6 +9,7 @@
 			<th>Marca</th>
 			<th>Donde se usa</th>
 			<th>Prioridad</th>
+			<th>Status</th>
 			<th></th>
 		</tr>
 	</thead>
