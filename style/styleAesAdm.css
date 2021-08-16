@@ -180,6 +180,10 @@ ul ul a {
 #sidebarCollapse{
     background-color: #0971c9cf; 
 }
+
+#tableARequest_wrapper{
+    zoom: 92%;
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
