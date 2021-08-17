@@ -26,7 +26,7 @@
 			
 			<form id="aesReg-form">
 				<div class="form-group">
-					<input type="text" id="aesUser" placeholder="GMIN" class="form-control" required>							
+					<input type="number"  step="1" id="aesUser" placeholder="GMIN" class="form-control" required>							
 				</div>	
 				<div class="form-group">
 					<input type="text" id="nombre" placeholder="Nombre" class="form-control" required>							

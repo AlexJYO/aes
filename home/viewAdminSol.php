@@ -63,7 +63,7 @@
 				</div>
 				<div class="col-md-6">	
 					<label class="form-label" id="basic-addon1">Cantidad*</label>		
-					<input type="text" id="refaccion_cantidad" class="form-control" required>
+					<input type="number" value="0" step="1" id="refaccion_cantidad" class="form-control" required>
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" for="refaccion_uMedida">Unidad de medida*</label>
@@ -112,11 +112,11 @@
 							<div class="row g-3" id="aes_tipoMM">
 								<div class="col-md-6">
 									<label class="input-group-text" id="basic-addon1">Minimo</label>	
-									<input type="text" id="aes_min" class="form-control aes_minMax">
+									<input type="number" value="0" step="1" id="aes_min" class="form-control aes_minMax">
 								</div>		
 								<div class="col-md-6">
 									<label class="input-group-text" id="basic-addon1">Maximo</label>			
-									<input type="text" id="aes_max" class="form-control aes_minMax">		
+									<input type="number" value="0" step="1" id="aes_max" class="form-control aes_minMax">		
 								</div>	
 							</div>
 						</div>
@@ -224,7 +224,7 @@
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Numero de SC o Solped</label>	
-					<input type="text" id="aes_noSC_Sol" class="form-control" >
+					<input type="number" value="0" step="1" id="aes_noSC_Sol" class="form-control" >
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Fecha de Elaboracion o Liberacion</label>	
@@ -232,11 +232,11 @@
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Costo Unitario</label>	
-					<input type="text" id="aes_costoU" class="form-control" >
+					<input type="number" value="0.0" step="0.01" id="aes_costoU" class="form-control" >
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Costo Total</label>	
-					<input type="text" id="aes_costoT1" class="form-control" >
+					<input type="number" value="0.0" step="0.01" id="aes_costoT1" class="form-control" >
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Moneda</label>	
@@ -256,7 +256,7 @@
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Numero de PO</label>	
-					<input type="text" id="aes_PO" class="form-control" >
+					<input type="number" value="0" step="1" id="aes_PO" class="form-control" >
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Fecha de PO</label>	
@@ -276,7 +276,7 @@
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Costo Total</label>	
-					<input type="text" id="aes_costoT2" class="form-control" >
+					<input type="number" value="0.0" step="0.01" id="aes_costoT2" class="form-control" >
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Moneda</label>	

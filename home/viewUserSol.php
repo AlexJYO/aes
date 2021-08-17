@@ -59,7 +59,7 @@
 				</div>
 				<div class="col-md-6">	
 					<label class="form-label" id="basic-addon1">Cantidad*</label>		
-					<input type="text" id="refaccion_cantidad" class="form-control" disabled>
+					<input type="number" value="0" step="1" id="refaccion_cantidad" class="form-control" disabled>
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" for="refaccion_uMedida">Unidad de medida*</label>
@@ -108,11 +108,11 @@
 							<div class="row g-3" id="aes_tipoMM">
 								<div class="col-md-6">
 									<label class="input-group-text" id="basic-addon1">Minimo</label>	
-									<input type="text" id="aes_min" class="form-control aes_minMax" disabled>
+									<input type="number" value="0" step="1" id="aes_min" class="form-control aes_minMax" disabled>
 								</div>		
 								<div class="col-md-6">
 									<label class="input-group-text" id="basic-addon1">Maximo</label>			
-									<input type="text" id="aes_max" class="form-control aes_minMax" disabled>		
+									<input type="number" value="0" step="1" id="aes_max" class="form-control aes_minMax" disabled>		
 								</div>	
 							</div>
 						</div>
