@@ -42,18 +42,18 @@
 			</div>
 
 			<div class="form-label col-sm-6">
-				<label class="form-label">Descripcion*</label>			
+				<label class="form-label">Descripcion</label>			
 				<textarea id="refaccion_descrip" class="form-control" style="height: 110px;" disabled></textarea>
 			</div>
 			<div class="col-sm-6">	
-				<label class="form-label">Cantidad*</label>		
+				<label class="form-label">Cantidad</label>		
 				<input type="text" id="refaccion_cantidad" class="form-control" disabled>
-				<label class="form-label">Unidad de medida*</label>
+				<label class="form-label">Unidad de medida</label>
 		  		<input type="text" id="refaccion_uMedida" class="form-control" disabled >
 			</div>
 			
 			<div class="col-sm-4">
-				<span class="form-label">No. de Parte*</span>			
+				<span class="form-label">No. de Parte</span>			
 				<input type="text" id="refaccion_noParte" placeholder="Modelo o Numero de Parte" class="form-control" disabled>
 			</div>
 			<div class="col-sm-4">
@@ -61,7 +61,7 @@
 				<input type="text" id="refaccion_codigoGM" placeholder="Codigo comun o GM (8 Digitos)" class="form-control" disabled>
 			</div>
 			<div class="form-label col-sm-4">
-				<span class="form-label">Marca*</span>			
+				<span class="form-label">Marca</span>			
 				<input type="text" id="refaccion_marca" class="form-control" disabled>
 			</div>
 
@@ -85,15 +85,15 @@
 			</div>
 
 			<div class="form-label col-sm-4">
-				<label class="form-label">Consumo Mensual*</label>			
+				<label class="form-label">Consumo Mensual</label>			
 				<input type="text" id="refaccion_cMensual" class="form-control" disabled>
 			</div>
 			<div class="form-label col-sm-4">	
-				<label class="form-label">Donde se usa*</label>		
+				<label class="form-label">Donde se usa</label>		
 				<input type="text" id="refaccion_dUsa" placeholder="Donde se usa el (Equipo, Maquina o Herramineta)" class="form-control" disabled>
 			</div>
 			<div class="form-label col-sm-4">
-				<label class="form-label">Fuente de Informacion*</label>			
+				<label class="form-label">Fuente de Informacion</label>			
 				<input type="text" id="refaccion_fInfo" placeholder="Fuente de Informacion (Manual, Catalogo, link)" class="form-control" disabled>
 			</div>
 			<div class="col-sm-4">
