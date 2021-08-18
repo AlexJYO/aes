@@ -25,6 +25,7 @@
 ?>
 			<tr userId="<?php echo $row['id']; ?>">
 			<td><?php echo $row['id']; ?></td>
+			<td><?php echo $row['nombre_s']; ?></td>
 			<td><?php echo $row['nombre_lgt']; ?></td>
 			<td><?php echo $row['descripcion']; ?></td>
 			<td><?php echo $row['cantidad']; ?></td>
