@@ -224,7 +224,7 @@
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Numero de SC o Solped</label>	
-					<input type="number" value="0" step="1" id="aes_noSC_Sol" class="form-control" >
+					<input type="number" value="0" step="1" id="aes_noSC_Sol" class="form-control" required>
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Fecha de Elaboracion o Liberacion</label>	
@@ -244,7 +244,7 @@
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Tiempo de Entrega Estimado</label>	
-					<input type="date" id="aes_tiempoE" class="form-control" >
+					<input type="text" id="aes_tiempoE" class="form-control" >
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Aprovador Actual</label>	

@@ -54,11 +54,11 @@
 			
 			<div class="col-sm-4">
 				<span class="form-label">No. de Parte</span>			
-				<input type="text" id="refaccion_noParte" placeholder="Modelo o Numero de Parte" class="form-control" disabled>
+				<input type="text" id="refaccion_noParte" class="form-control" disabled>
 			</div>
 			<div class="col-sm-4">
 				<span class="form-label">Codigo GM</span>			
-				<input type="text" id="refaccion_codigoGM" placeholder="Codigo comun o GM (8 Digitos)" class="form-control" disabled>
+				<input type="text" id="refaccion_codigoGM"  class="form-control" disabled>
 			</div>
 			<div class="form-label col-sm-4">
 				<span class="form-label">Marca</span>			
@@ -90,11 +90,11 @@
 			</div>
 			<div class="form-label col-sm-4">	
 				<label class="form-label">Donde se usa</label>		
-				<input type="text" id="refaccion_dUsa" placeholder="Donde se usa el (Equipo, Maquina o Herramineta)" class="form-control" disabled>
+				<input type="text" id="refaccion_dUsa"  class="form-control" disabled>
 			</div>
 			<div class="form-label col-sm-4">
 				<label class="form-label">Fuente de Informacion</label>			
-				<input type="text" id="refaccion_fInfo" placeholder="Fuente de Informacion (Manual, Catalogo, link)" class="form-control" disabled>
+				<input type="text" id="refaccion_fInfo"  class="form-control" disabled>
 			</div>
 			<div class="col-sm-4">
 				<label class="input-group-text">¿Por que?</label>			
