@@ -2,6 +2,7 @@
 	<thead class="thead-light">
 		<tr>
 			<th>ID</th>
+			<th>Solicitante</th>
 			<th>Lider</th>
 			<th>Descripcion</th>
 			<th>Cantidad</th>
