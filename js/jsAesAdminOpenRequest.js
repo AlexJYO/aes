@@ -73,6 +73,7 @@ $(document).ready(function(){
 					$('#aes_costoT1').prop('disabled', true);
 					$('#aes_moneda1').prop('disabled', true);
 					$('#aes_tiempoE').prop('disabled', true);
+					$('#aes_rango').prop('disabled', true);
 					$('#aes_aprovadorA').prop('disabled', true);
 					$('#aes_compradorSAP').prop('disabled', true);
 					$('#aes_PO').prop('disabled', true);
@@ -154,6 +155,15 @@ $(document).ready(function(){
 				$('#aes_moneda1').val(sol_data['moneda_1']);
 				$('#aes_tiempoE').val(sol_data['tiempo_estimado']);
 				$('#aes_aprovadorA').val(sol_data['aprobador_actual']);
+				//$('#aes_rango').val(sol_data['nivel_ap']);
+				$('#aes_rango').val('0');
+				const rango = $('#aes_rango').val();
+				if(rango==0)
+				{
+					$('#aes_aprovadorA').prop('disabled', true);
+				}else{
+					$('#aes_aprovadorA').prop('disabled', false);
+				}
 				$('#aes_compradorSAP').val(sol_data['comprador_sap']);
 				$('#aes_PO').val(sol_data['po']);
 				$('#aes_fechaPO').val(sol_data['fecha_po']);
@@ -238,6 +248,15 @@ $(document).ready(function(){
 			$('#label_minMax').hide();
 		}
 	});
+	$("#aes_rango").change(function(){
+		const rango = $('#aes_rango').val();
+		if(rango==0)
+		{
+			$('#aes_aprovadorA').prop('disabled', true);
+		}else{
+			$('#aes_aprovadorA').prop('disabled', false);
+		}
+	});
 	
 	$('#aes_status').change(function(){
 		const status = $('#aes_status').val();
@@ -277,6 +296,7 @@ $(document).ready(function(){
 			$('#aes_moneda1').prop('disabled', false);
 			$('#aes_tiempoE').prop('disabled', false);
 			$('#aes_aprovadorA').prop('disabled', false);
+			$('#aes_rango').prop('disabled', false);
 			$('#aes_compradorSAP').prop('disabled', false);
 			$('#aes_PO').prop('disabled', false);
 			$('#aes_fechaPO').prop('disabled', false);
@@ -313,6 +333,7 @@ $(document).ready(function(){
 			$('#aes_moneda1').prop('disabled', true);
 			$('#aes_tiempoE').prop('disabled', true);
 			$('#aes_aprovadorA').prop('disabled', true);
+			$('#aes_rango').prop('disabled', true);
 			$('#aes_compradorSAP').prop('disabled', true);
 			$('#aes_PO').prop('disabled', true);
 			$('#aes_fechaPO').prop('disabled', true);
