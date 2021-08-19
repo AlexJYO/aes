@@ -248,7 +248,19 @@
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Aprovador Actual</label>	
-					<input type="text" id="aes_aprovadorA" class="form-control" >
+					<div class="input-group mb-3 col-md-4">
+  						<select class="form-select" id="aes_rango">
+    						<option value="0" selected>Nivel</option>
+    						<option value="1">1. Planner</option>
+    						<option value="2">2. Finanzas</option>
+    						<option value="3">3. Director</option>
+    						<option value="4">4. Compras</option>
+  						</select>
+  						<div class="input-group-append col-md-8">
+    						<input type="text" class="input-group form-control" id="aes_aprovadorA" ></input>
+  						</div>
+					</div>
+					<!-- <input type="text" id="aes_aprovadorA" class="form-control" > -->
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Comprador del SAP</label>	
