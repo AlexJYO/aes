@@ -175,6 +175,9 @@ $(document).ready(function(){
 				$('#aes_IR').val(sol_data['ir']);
 				$('#aes_fechaIR').val(sol_data['fecha_ir']);
 				//console.log(sol_data);
+				$('.progress-bar').attr('aria-valuenow', sol_data['calBar']);
+				$('.progress-bar').html(sol_data['calBar']+'%');
+				$('.progress-bar').css( 'width', sol_data['calBar']+'%');
 			}
 		});
 	}

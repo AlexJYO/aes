@@ -139,104 +139,14 @@ $(document).ready(function(){
 					$('#flexRadioDefault6').prop('checked',false);
 					$('#flexRadioDefault5').prop('checked',true);
 				}
-				//Seguimiento AES
-				$('#aes_miembro').val(sol_data['nombre_r']);
-				$('#aes_fechaUA').val(sol_data['fecha_r']);
-				$('#aes_alcanceT').val(sol_data['alcance_trabajo']);
-				$('#aes_dibujoT').val(sol_data['dibujo_tecnico']);
-				$('#aes_muestra').val(sol_data['muestra_foto']);
-				$('#aes_SC_Sol').val(sol_data['tipo_compra']);
-				$('#aes_cuenta').val(sol_data['cuenta']);
-				$('#aes_noSC_Sol').val(sol_data['no_sc_solped']);
-				$('#aes_fechaL').val(sol_data['fecha_liberacion']);
-				$('#aes_costoU').val(sol_data['costo_unitario']);
-				$('#aes_costoT1').val(sol_data['costo_total_1']);
-				$('#aes_moneda1').val(sol_data['moneda_1']);
-				$('#aes_tiempoE').val(sol_data['tiempo_estimado']);
-				$('#aes_aprovadorA').val(sol_data['aprobador_actual']);
-				$('#aes_compradorSAP').val(sol_data['comprador_sap']);
-				$('#aes_PO').val(sol_data['po']);
-				$('#aes_fechaPO').val(sol_data['fecha_po']);
-				$('#aes_proveedor').val(sol_data['proveedor']);
-				$('#aes_fechaR').val(sol_data['fecha_realizacion']);
-				$('#aes_noFactura').val(sol_data['no_factura']);
-				$('#aes_costoT2').val(sol_data['costo_total_2']);
-				$('#aes_moneda2').val(sol_data['moneda_2']);
-				$('#aes_IR').val(sol_data['ir']);
-				$('#aes_fechaIR').val(sol_data['fecha_ir']);
-				//console.log(sol_data);
+				
+				$('.progress-bar').attr('aria-valuenow', sol_data['calBar']);
+				$('.progress-bar').html(sol_data['calBar']+'%');
+				$('.progress-bar').css( 'width', sol_data['calBar']+'%');
+				
 			}
 		});
 	}
-
-	
-	$('#adminSolicitud-form').submit(function(e){
-		const postData = {
-			fecha_s: $('#aes_fechaE').val(),
-			status: $('#aes_status').val(),
-			nombre_s: $('#aes_name').val(),
-			nombre_lgt: $('#aes_jefe').val(),
-			departamento: $('#aes_departamento').val(),
-			tripulacion: $('#aes_tripulacion').val(),
-
-			descripcion: $('#refaccion_descrip').val(),
-			cantidad: $('#refaccion_cantidad').val(),
-			u_medida: $('#refaccion_uMedida').val(),
-			no_parte: $('#refaccion_noParte').val(),
-			codigo_gm: $('#refaccion_codigoGM').val(),
-			marca: $('#refaccion_marca').val(),
-			unica_repetitiva:$('.typeC:checked').val(),
-			min: $('#aes_min').val(),
-			max: $('#aes_max').val(),
-			consumo_mensual: $('#refaccion_cMensual').val(),
-			donde_se_usa: $('#refaccion_dUsa').val(),
-			fuente_informacion: $('#refaccion_fInfo').val(),
-			porque1: $('#refaccion_porque1').val(),
-			porque2: $('#refaccion_porque2').val(),
-			porque3: $('#refaccion_porque3').val(),
-			prioridad: $('.prioridadS:checked').val(),
-
-			alcance_trabajo: $('#aes_alcanceT').val(),
-			dibujo_tecnico: $('#aes_dibujoT').val(),
-			muestra_foto: $('#aes_muestra').val(),
-			tipo_compra: $('#aes_SC_Sol').val(),
-			cuenta: $('#aes_cuenta').val(),
-			no_sc_solped: $('#aes_noSC_Sol').val(),
-			fecha_l: $('#aes_fechaL').val(),
-			costo_unitario: $('#aes_costoU').val(),
-			costo_total_1: $('#aes_costoT1').val(),
-			moneda_1: $('#aes_moneda1').val(),
-			tiempo_estimado: $('#aes_tiempoE').val(),
-			aprobador_actual: $('#aes_aprovadorA').val(),
-			comprador_sap: $('#aes_compradorSAP').val(),
-			po: $('#aes_PO').val(),
-			fecha_po: $('#aes_fechaPO').val(),
-			proveedor: $('#aes_proveedor').val(),
-			fecha_realizacion: $('#aes_fechaR').val(),
-			no_factura: $('#aes_noFactura').val(),
-			costo_total_2: $('#aes_costoT2').val(),
-			moneda_2: $('#aes_moneda2').val(),
-			ir: $('#aes_IR').val(),
-			fecha_ir: $('#aes_fechaIR').val()
-		};
-
-		$.post('../backend/aesSaveRequestAdm.php',postData,function(response){
-			// config();
-			// loadingData();
-			alert('Cambios realizados con exito');
-		});
-	});
-
-	$(".typeC").change(function(){
-		const UR = $('.typeC:checked').val();
-		if(UR == "Repetitiva")
-		{
-			$('#aes_tipoMM').show();
-		}else{
-			$('#aes_tipoMM').hide();
-		}
-	});
-	
 
 	$(document).on('click','#buttonCan',function(){
 		location.href = 'aesUserInfo.php';
