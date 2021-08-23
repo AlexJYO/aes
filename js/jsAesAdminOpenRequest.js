@@ -46,7 +46,6 @@ $(document).ready(function(){
 				$('h2').html('Solicitud Número '+sol_data['id']);
 				$('#aes_status').val(sol_data['status']);
 				const status = $('#aes_status').val();
-				console.log(status);
 				if(status=="En Proceso" || status=="" || status==null){
 					$("#aes_status").css("color", "blue");
 				}else{
@@ -74,6 +73,7 @@ $(document).ready(function(){
 					$('#aes_costoT1').prop('disabled', true);
 					$('#aes_moneda1').prop('disabled', true);
 					$('#aes_tiempoE').prop('disabled', true);
+					$('#aes_rango').prop('disabled', true);
 					$('#aes_aprovadorA').prop('disabled', true);
 					$('#aes_compradorSAP').prop('disabled', true);
 					$('#aes_PO').prop('disabled', true);
@@ -108,7 +108,8 @@ $(document).ready(function(){
 				if(sol_data['unica_repetitiva']=="Unica"){
 					$("#flexRadioDefault1").prop("checked", true);
 					$("#flexRadioDefault2").prop("checked", false);
-					$('#aes_minMax').hide();
+					$('#aes_tipoMM').hide();
+					$('#label_minMax').hide();
 					$('#aes_min').val('0');
 					$('#aes_max').val('0');
 
@@ -139,6 +140,9 @@ $(document).ready(function(){
 					$('#flexRadioDefault6').prop('checked',false);
 					$('#flexRadioDefault5').prop('checked',true);
 				}
+				//Seguimiento AES
+				$('#aes_miembro').val(sol_data['nombre_r']);
+				$('#aes_fechaUA').val(sol_data['fecha_r']);
 				$('#aes_alcanceT').val(sol_data['alcance_trabajo']);
 				$('#aes_dibujoT').val(sol_data['dibujo_tecnico']);
 				$('#aes_muestra').val(sol_data['muestra_foto']);
@@ -151,6 +155,15 @@ $(document).ready(function(){
 				$('#aes_moneda1').val(sol_data['moneda_1']);
 				$('#aes_tiempoE').val(sol_data['tiempo_estimado']);
 				$('#aes_aprovadorA').val(sol_data['aprobador_actual']);
+				$('#aes_rango').val(sol_data['nivel_ap']);
+				
+				const rango = $('#aes_rango').val();
+				if(rango==0)
+				{
+					$('#aes_aprovadorA').prop('disabled', true);
+				}else{
+					$('#aes_aprovadorA').prop('disabled', false);
+				}
 				$('#aes_compradorSAP').val(sol_data['comprador_sap']);
 				$('#aes_PO').val(sol_data['po']);
 				$('#aes_fechaPO').val(sol_data['fecha_po']);
@@ -166,20 +179,7 @@ $(document).ready(function(){
 		});
 	}
 
-	function loadingData(){
-		$.ajax({
-			url: '../backend/loadingDataAS.php',
-			type: 'GET',
-			success: function(response){
-				const user_data = JSON.parse(response);
-				$('#aes_miembro').val(user_data['name_all']);
-				$('#aes_fechaUA').val(user_data['date']);
-				//console.log(user_data);
-
-			}
-		});
-	}
-	loadingData();
+	
 	$('#adminSolicitud-form').submit(function(e){
 		const postData = {
 			fecha_s: $('#aes_fechaE').val(),
@@ -217,6 +217,7 @@ $(document).ready(function(){
 			costo_total_1: $('#aes_costoT1').val(),
 			moneda_1: $('#aes_moneda1').val(),
 			tiempo_estimado: $('#aes_tiempoE').val(),
+			nivel_ap: $('#aes_rango').val(),
 			aprobador_actual: $('#aes_aprovadorA').val(),
 			comprador_sap: $('#aes_compradorSAP').val(),
 			po: $('#aes_PO').val(),
@@ -241,9 +242,20 @@ $(document).ready(function(){
 		const UR = $('.typeC:checked').val();
 		if(UR == "Repetitiva")
 		{
-			$('#aes_minMax').show();
+			$('#aes_tipoMM').show();
+			$('#label_minMax').show();
 		}else{
-			$('#aes_minMax').hide();
+			$('#aes_tipoMM').hide();
+			$('#label_minMax').hide();
+		}
+	});
+	$("#aes_rango").change(function(){
+		const rango = $('#aes_rango').val();
+		if(rango==0)
+		{
+			$('#aes_aprovadorA').prop('disabled', true);
+		}else{
+			$('#aes_aprovadorA').prop('disabled', false);
 		}
 	});
 	
@@ -285,6 +297,7 @@ $(document).ready(function(){
 			$('#aes_moneda1').prop('disabled', false);
 			$('#aes_tiempoE').prop('disabled', false);
 			$('#aes_aprovadorA').prop('disabled', false);
+			$('#aes_rango').prop('disabled', false);
 			$('#aes_compradorSAP').prop('disabled', false);
 			$('#aes_PO').prop('disabled', false);
 			$('#aes_fechaPO').prop('disabled', false);
@@ -321,6 +334,7 @@ $(document).ready(function(){
 			$('#aes_moneda1').prop('disabled', true);
 			$('#aes_tiempoE').prop('disabled', true);
 			$('#aes_aprovadorA').prop('disabled', true);
+			$('#aes_rango').prop('disabled', true);
 			$('#aes_compradorSAP').prop('disabled', true);
 			$('#aes_PO').prop('disabled', true);
 			$('#aes_fechaPO').prop('disabled', true);
@@ -336,5 +350,8 @@ $(document).ready(function(){
 	})
 	$(document).on('click','#buttonCan',function(){
 		location.href = 'aesAdminSol.php';
+	});
+	$(document).on('click','#buttonImp',function(){
+		window.open('imprimir.php', '_blank');
 	});
 });
