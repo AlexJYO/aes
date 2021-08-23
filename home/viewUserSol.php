@@ -2,18 +2,17 @@
 	<div>		
 		<h2 class="page-title">Solicitud Número </h2>
 	</div>
-	<form class="row g-3" id="adminSolicitud-form">
+	<div class="progress mb-3" style="height:25px">
+  		<div class="progress-bar" role="progressbar" style="width: 0%; height:25px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%
+  		</div>
+	</div>
+	<form class="row g-3" id="userSolicitud-form">
 		
 		<div class="card">
 			<div class="row g-3 card-body" id="seccion">
 				<div class="col-md-6">
 					<label class="form-label">Fecha de Elaboracion</label>	
 					<input type="text" id="aes_fechaE" class="form-control" disabled="">
-				</div>
-				<div class="col-md-6">
-					<label class="form-label">Estado de la solicitud</label>
-					<input type="text" id="aes_status" class="form-control" disabled="">	
-					
 				</div>
 				<h4 class="datos-solicitante">Datos del Usuario</h4>
 				<div class="col-md-6">
@@ -178,11 +177,9 @@
 		</div>
 
 		<div class="form-check">
-			<button type="submit" class="btn btn-success" id="buttonAct">
-				Guardar
-			</button>
-			<button type="button" class="btn btn-warning" id="buttonCan">
-				Cancelar
+			
+			<button type="button" class="btn btn-success" id="buttonCan">
+				Regresar
 			</button>
 			<button type="button" class="btn btn-info" id="buttonImp">
 				Imprimir

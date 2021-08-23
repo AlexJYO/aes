@@ -2,6 +2,10 @@
 	<div>		
 		<h2 class="page-title">Solicitud Número </h2>
 	</div>
+	<div class="progress mb-3" style="height:25px">
+  		<div class="progress-bar" role="progressbar" style="width: 0%; height:25px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%
+  		</div>
+	</div>
 	<form class="row g-3" id="adminSolicitud-form">
 		
 		<div class="card">
