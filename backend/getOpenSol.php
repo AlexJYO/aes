@@ -21,6 +21,7 @@
 		$query = $db->connect()->prepare('SELECT *FROM request WHERE id = :id');
 		$query->execute(['id' => $id_request]);
 		$row = $query->fetchAll();
+		
 		$json['id']=$row[0]['id'];
 		$json['fecha_s']=$row[0]['fecha_s'];
 		$json['status']=$row[0]['status'];
@@ -57,6 +58,7 @@
 		$json['costo_total_1']=$row[0]['costo_total_1'];
 		$json['moneda_1']=$row[0]['moneda_1'];
 		$json['tiempo_estimado']=$row[0]['tiempo_estimado'];
+		$json['nivel_ap']=$row[0]['nivel_ap'];
 		$json['aprobador_actual']=$row[0]['aprobador_actual'];
 		$json['comprador_sap']=$row[0]['comprador_sap'];
 		$json['po']=$row[0]['po'];
