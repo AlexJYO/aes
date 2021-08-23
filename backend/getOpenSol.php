@@ -70,6 +70,10 @@
 		$json['moneda_2']=$row[0]['moneda_2'];
 		$json['ir']=$row[0]['ir'];
 		$json['fecha_ir']=$row[0]['fecha_ir'];
+
+		include('calcularBar.php');
+		$json['calBar'] = calcularBarP($row[0]['no_sc_solped'],$row[0]['nivel_ap'],$row[0]['po'],$row[0]['tiempo_estimado']);
+
 		$jsonstring = json_encode($json);
 		echo $jsonstring;
 	

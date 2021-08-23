@@ -37,18 +37,47 @@
 			<td><?php echo $row['marca']; ?></td>
 			<td><?php echo $row['donde_se_usa']; ?></td>
 			<td><?php echo $row['prioridad']; ?></td>
-			<?php $colorS='';
-				if ($row['status']=='Cancelado') {
-					$colorS='style="color: red;"';
+			<?php 
+				
+				$calBar = 10;
+				if ($row['tiempo_estimado']=='' || $row['tiempo_estimado']==NULL) {
+					$fe=0;
 				}else{
-					if ($row['status']=='Finalizado') {
-						$colorS='style="color: green;"';
-					}else{
-						$colorS='style="color: blue;"';
+					$fe=1;
+				}
+				if($row['no_sc_solped']>0)
+				{
+					$calBar+=10;
+					if ($row['nivel_ap']>0) {
+						if ($row['nivel_ap']==1) {
+							$calBar+=10;
+						}
+						if ($row['nivel_ap']==2) {
+						$calBar+=20;
+						}
+						if ($row['nivel_ap']==3) {
+						$calBar+=30;
+						}
+						if ($row['nivel_ap']==4) {
+							$calBar+=40;
+							if ($row['po']>0) {
+								$calBar+=10;
+								if ($fe>0) {
+									$calBar+=10;
+								}
+							}
+						}
+
 					}
 				}
+				
 			?>
-			<td <?php echo $colorS;?>><?php echo $row['status']; ?></td>
+			<td>
+				<div class="progress" style="height:25px">
+  					<div class="progress-bar" role="progressbar" style="width: <?php echo $calBar?>%; height:25px;" aria-valuenow="<?php echo $calBar?>" aria-valuemin="0" aria-valuemax="100"><?php echo $calBar?>
+  					</div>
+				</div>
+			</td>
 			<td style=" border: inset 0pt">
 				<button class="open-sol btn btn-primary">Abrir</button>
 			</td>
