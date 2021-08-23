@@ -155,8 +155,8 @@ $(document).ready(function(){
 				$('#aes_moneda1').val(sol_data['moneda_1']);
 				$('#aes_tiempoE').val(sol_data['tiempo_estimado']);
 				$('#aes_aprovadorA').val(sol_data['aprobador_actual']);
-				//$('#aes_rango').val(sol_data['nivel_ap']);
-				$('#aes_rango').val('0');
+				$('#aes_rango').val(sol_data['nivel_ap']);
+				
 				const rango = $('#aes_rango').val();
 				if(rango==0)
 				{
@@ -217,6 +217,7 @@ $(document).ready(function(){
 			costo_total_1: $('#aes_costoT1').val(),
 			moneda_1: $('#aes_moneda1').val(),
 			tiempo_estimado: $('#aes_tiempoE').val(),
+			nivel_ap: $('#aes_rango').val(),
 			aprobador_actual: $('#aes_aprovadorA').val(),
 			comprador_sap: $('#aes_compradorSAP').val(),
 			po: $('#aes_PO').val(),
