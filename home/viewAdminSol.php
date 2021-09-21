@@ -344,7 +344,7 @@
 					    		<option value="10">16</option>
 					    		<option value="9">12</option>
 					    		<option value="8">10</option>
-					    		<option value="7">9</option>
+					    		<option value="7">8</option>
 					    		<option value="6">7</option>
 					    		<option value="5">6</option>
 					    		<option value="4">5</option>
