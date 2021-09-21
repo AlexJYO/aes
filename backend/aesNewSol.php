@@ -69,16 +69,27 @@
 	$why2 = mysqli_real_escape_string($conn,$why2);
 	$why3 = stripslashes($_REQUEST['why3']);
 	$why3 = mysqli_real_escape_string($conn,$why3);
-	$priority = stripslashes($_REQUEST['priority']);
+	/*$priority = stripslashes($_REQUEST['priority']);
 	$priority = mysqli_real_escape_string($conn,$priority);
-
+*/
 	$status = 'En Proceso';
 
 	//Insertar elemento
 	//Se usan prepare y execute para realizar la insersion de un nuevo elemento
-	$query = $db->connect()->prepare("INSERT INTO request (id, fecha_s, gmin, nombre_s, nombre_lgt, departamento, tripulacion, descripcion, cantidad, u_medida, no_parte, codigo_gm, marca, unica_repetitiva, min, max, consumo_mensual, donde_se_usa, fuente_informacion, porque1, porque2, porque3, prioridad, alcance_trabajo, dibujo_tecnico, muestra_foto, nombre_r, fecha_r, tipo_compra, status, cuenta, no_sc_solped, fecha_liberacion, costo_unitario, costo_total_1, moneda_1, tiempo_estimado, aprobador_actual, comprador_sap, po, fecha_po, proveedor, fecha_realizacion, no_factura, costo_total_2, moneda_2, ir, fecha_ir) VALUES (NULL, '$date_s', '$user', '$name', '$lgt', '$department', '$crew', '$description', '$quantity', '$measure', '$noParte', '$gmCode', '$brand', '$buyType', '$min', '$max', '$monthlyCon', '$whereUse', '$sourceInfo', '$why1', '$why2', '$why3', '$priority', '', '', '', '', NULL, '', '$status', '', NULL, NULL, NULL, NULL, '', NULL, '', '', NULL, NULL, '', NULL, '', NULL, '', '', NULL)");
+	$query = $db->connect()->prepare("INSERT INTO request (id, fecha_s, gmin, nombre_s, nombre_lgt, departamento, tripulacion, descripcion, cantidad, u_medida, no_parte, codigo_gm, marca, unica_repetitiva, min, max, consumo_mensual, donde_se_usa, fuente_informacion, porque1, porque2, porque3, prioridad, alcance_trabajo, dibujo_tecnico, muestra_foto, nombre_r, fecha_r, tipo_compra, status, cuenta, no_sc_solped, fecha_liberacion, costo_unitario, costo_total_1, moneda_1, tiempo_estimado, nivel_ap, aprobador_actual, comprador_sap, po, fecha_po, proveedor, fecha_realizacion, no_factura, costo_total_2, moneda_2, ir, fecha_ir) VALUES (NULL, '$date_s', '$user', '$name', '$lgt', '$department', '$crew', '$description', '$quantity', '$measure', '$noParte', '$gmCode', '$brand', '$buyType', '$min', '$max', '$monthlyCon', '$whereUse', '$sourceInfo', '$why1', '$why2', '$why3', '', '', '', '', '', NULL, '', '$status', '', NULL, NULL, NULL, NULL, '', NULL, '', '', '', NULL, NULL, '', NULL, '', NULL, '', '', NULL)");
 
 	$result=$query->execute();
+
+	$c_p = $_POST['c_p'];
+	$v_p = $_POST['v_p'];
+	$c_f = $_POST['c_f'];
+	$v_f = $_POST['v_f'];
+	$v_d = $_POST['v_d'];
+
+	$query = $db->connect()->prepare("INSERT INTO item (id, num_p, marca, cost, c_p, v_p, c_f, v_f, c_e, v_e, v_d, priority) VALUES (NULL, '$noParte', '$brand', NULL, '$c_p', '$v_p', '$c_f', '$v_f', NULL, NULL, '$v_d', NULL)");
+
+	$result=$query->execute();
+
 	if ($result) {
 		$banReg=1;
 		$query = $db->connect()->prepare('SELECT id FROM request WHERE id = (SELECT MAX(id) FROM request)');
