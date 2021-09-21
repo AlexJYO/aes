@@ -53,6 +53,7 @@ $(document).ready(function(){
 	});
 
 	$('#solicitud-form').submit(function(e){
+		$('#buttonAct').prop('disabled', true);
 		let t_p = $('.typeParo:checked').val();
 		let t_f = $('.typeFalla:checked').val();
 
@@ -112,11 +113,11 @@ $(document).ready(function(){
 			}
 		}
 		$.post('../backend/aesNewSol.php',postData,function(response){
-			console.log(response);
+			//console.log(response);
 			if (response==1) {
 				alert('Registro exitoso.');
 				$('#solicitud-form').trigger('reset');
-				window.open('imprimir.php', '_blank');
+				//window.open('imprimir.php', '_blank');
 				location.reload();
 			}else{
 				

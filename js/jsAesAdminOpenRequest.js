@@ -176,6 +176,7 @@ $(document).ready(function(){
 
 	
 	$('#adminSolicitud-form').submit(function(e){
+		$('#buttonAct').prop('disabled', true);
 		const postData = {
 			fecha_s: $('#aes_fechaE').val(),
 			status: $('#aes_status').val(),
@@ -227,10 +228,11 @@ $(document).ready(function(){
 		};
 
 		$.post('../backend/aesSaveRequestAdm.php',postData,function(response){
-			
+			//console.log(response);
 			alert('Cambios realizados con exito');
 			location.reload();
 		});
+		e.preventDefault();
 	});
 
 	$(".typeC").change(function(){
@@ -384,7 +386,7 @@ $(document).ready(function(){
 				alert('Error no es posible generar la prioridad');
 			}else{
 				alert('Se ha generado la prioridad de esta solicitud');
-				location.reload();
+				//location.reload();
 			}
 			
 		});
