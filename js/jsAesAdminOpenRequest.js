@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	'use strict'
 
-	
+	$('#prioridadCal').hide();
 	$('#linkRequest').attr('class','active');
 
 	$("#sidebar").mCustomScrollbar({
@@ -43,7 +43,13 @@ $(document).ready(function(){
 			success: function(response){
 				const sol_data = JSON.parse(response);
 				//Datos del solicitante
-				$('h2').html('Solicitud Número '+sol_data['id']);
+				
+				if (sol_data['prioridad']=== null || sol_data['prioridad']==='') {
+					$('h2').html('Solicitud Número '+sol_data['id']);
+				}else{
+					
+					$('h2').html('Solicitud Número '+sol_data['id']+' con prioridad '+sol_data['prioridad']);
+				}
 				$('#aes_status').val(sol_data['status']);
 				const status = $('#aes_status').val();
 				if(status=="En Proceso" || status=="" || status==null){
@@ -125,21 +131,7 @@ $(document).ready(function(){
 				$('#refaccion_porque1').val(sol_data['porque1']);
 				$('#refaccion_porque2').val(sol_data['porque2']);
 				$('#refaccion_porque3').val(sol_data['porque3']);
-				if(sol_data['prioridad']=="Prioridad de seguridad")
-				{
-					$('#flexRadioDefault6').prop('checked',false);
-					$('#flexRadioDefault3').prop('checked',true);
-				}
-				if(sol_data['prioridad']=="Prioridad como paro total")
-				{
-					$('#flexRadioDefault6').prop('checked',false);
-					$('#flexRadioDefault4').prop('checked',true);
-				}
-				if(sol_data['prioridad']=="Prioridad como paro parcial")
-				{
-					$('#flexRadioDefault6').prop('checked',false);
-					$('#flexRadioDefault5').prop('checked',true);
-				}
+				
 				//Seguimiento AES
 				$('#aes_miembro').val(sol_data['nombre_r']);
 				$('#aes_fechaUA').val(sol_data['fecha_r']);
@@ -350,11 +342,61 @@ $(document).ready(function(){
 			$('#aes_fechaIR').prop('disabled', true);
 		}
 
-	})
+	});
+	$('#aes_costoU').change(function(){
+		let costoU = $('#aes_costoU').val();
+		if(costoU>0.0)
+		{
+			$('#prioridadCal').show();
+		}else{
+			$('#prioridadCal').hide();
+		}
+		
+	});
+	$(document).on('click','#calcularP',function(){
+		let t_e = $('.typeTime:checked').val();
+		const postData = {
+			num_p: $('#refaccion_noParte').val(),
+			marca: $('#refaccion_marca').val(),
+			cost:  $('#aes_costoUD').val(),
+			c_e: "",
+			v_e:  ""
+		};
+
+		if (t_e == "Semanas") {
+			postData.v_e = $('#valSemanas').val();
+			postData.c_e = 7.0;
+		}else{
+			if (t_e == "Dias") {
+				postData.v_e = $('#valDias').val();
+				postData.c_e = 5.0;
+			}else{
+				postData.v_e = $('#valHoras').val();
+				postData.c_e = 3.0;
+			}
+		}
+		
+		$.post('../backend/aesCalPri.php',postData,function(response){
+
+			if(response==0)
+			{
+				alert('Error no es posible generar la prioridad');
+			}else{
+				alert('Se ha generado la prioridad de esta solicitud');
+			}
+			
+		});
+
+		$('#prioridadCal').hide();
+	});
+
 	$(document).on('click','#buttonCan',function(){
 		location.href = 'aesAdminSol.php';
 	});
 	$(document).on('click','#buttonImp',function(){
 		window.open('imprimir.php', '_blank');
 	});
+
+	
+
 });

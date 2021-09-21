@@ -43,7 +43,13 @@ $(document).ready(function(){
 			success: function(response){
 				const sol_data = JSON.parse(response);
 				//Datos del solicitante
-				$('h2').html('Solicitud Número '+sol_data['id']);
+				if (sol_data['prioridad']=== null || sol_data['prioridad']==='') {
+					$('h2').html('Solicitud Número '+sol_data['id']);
+				}else{
+					
+					$('h2').html('Solicitud Número '+sol_data['id']+' con prioridad '+sol_data['prioridad']);
+				}
+				
 				$('#aes_status').val(sol_data['status']);
 				const status = $('#aes_status').val();
 				if(status=="En Proceso" || status=="" || status==null){
@@ -124,21 +130,7 @@ $(document).ready(function(){
 				$('#refaccion_porque1').val(sol_data['porque1']);
 				$('#refaccion_porque2').val(sol_data['porque2']);
 				$('#refaccion_porque3').val(sol_data['porque3']);
-				if(sol_data['prioridad']=="Prioridad de seguridad")
-				{
-					$('#flexRadioDefault6').prop('checked',false);
-					$('#flexRadioDefault3').prop('checked',true);
-				}
-				if(sol_data['prioridad']=="Prioridad como paro total")
-				{
-					$('#flexRadioDefault6').prop('checked',false);
-					$('#flexRadioDefault4').prop('checked',true);
-				}
-				if(sol_data['prioridad']=="Prioridad como paro parcial")
-				{
-					$('#flexRadioDefault6').prop('checked',false);
-					$('#flexRadioDefault5').prop('checked',true);
-				}
+				
 				
 				$('.progress-bar').attr('aria-valuenow', sol_data['calBar']);
 				$('.progress-bar').html(sol_data['calBar']+'%');

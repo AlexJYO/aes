@@ -53,6 +53,9 @@ $(document).ready(function(){
 	});
 
 	$('#solicitud-form').submit(function(e){
+		 let t_p = $('.typeParo:checked').val();
+		 let t_f = $('.typeFalla:checked').val();
+
 		 const postData = {
 			name: $('#aes_name').val(),
 			lgt: $('#aes_jefe').val(),
@@ -73,16 +76,47 @@ $(document).ready(function(){
 			why1: $('#refaccion_porque1').val(),
 			why2: $('#refaccion_porque2').val(),
 			why3: $('#refaccion_porque3').val(),
-			priority: $('.prioridadS:checked').val()
+			c_p: "",
+			c_f: "",
+			v_p: "",
+			v_f: "",
+			v_d: $('#deteccion').val()
+
+
+			//priority: $('.prioridadS:checked').val()
 
 
 			//departamento: $('#aes_departamento option:selected').html(),
 			//tripulacion: $('#aes_tripulacion option:selected').html(),
 			
-
-
 		};
 		//console.log(postData);
+		if (t_p == "Planta") {
+			postData.c_p = 20.0;
+			postData.v_p = $('#valPlanta').val();
+
+		}else{
+			if (t_p == "Linea") {
+				postData.c_p = 10.0;
+				postData.v_p = $('#valLinea').val();
+			}else{
+				postData.c_p = 5.0;
+				postData.v_p = $('#valMaquina').val();
+			}
+		}
+
+		if (t_f == "Dia") {
+			postData.c_f = 20.0;
+			postData.v_f = $('#valDia').val();
+		}else{
+			postData.v_f = $('#valMes').val();
+			if (postData.v_f>10) {
+				postData.c_f = 10.0;
+				postData.v_f -=10;
+			}else{
+				postData.c_f = 5.0;
+			}
+		}
 		$.post('../backend/aesNewSol.php',postData,function(response){
 			if (response==1) {
 				alert('Registro exitoso.');
