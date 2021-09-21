@@ -67,7 +67,7 @@ $(document).ready(function(){
 					$('#refaccion_dUsa').prop('disabled', true);
 					$('#refaccion_fInfo').prop('disabled', true);
 					$('.whys').prop('disabled', true);
-					$('.prioridadS').prop('disabled', true);
+					//$('.prioridadS').prop('disabled', true);
 					$('#aes_alcanceT').prop('disabled', true);
 					$('#aes_dibujoT').prop('disabled', true);
 					$('#aes_muestra').prop('disabled', true);
@@ -199,7 +199,7 @@ $(document).ready(function(){
 			porque1: $('#refaccion_porque1').val(),
 			porque2: $('#refaccion_porque2').val(),
 			porque3: $('#refaccion_porque3').val(),
-			prioridad: $('.prioridadS:checked').val(),
+			//prioridad: $('.prioridadS:checked').val(),
 
 			alcance_trabajo: $('#aes_alcanceT').val(),
 			dibujo_tecnico: $('#aes_dibujoT').val(),
@@ -227,9 +227,9 @@ $(document).ready(function(){
 		};
 
 		$.post('../backend/aesSaveRequestAdm.php',postData,function(response){
-			// config();
-			// loadingData();
+			
 			alert('Cambios realizados con exito');
+			location.reload();
 		});
 	});
 
@@ -279,7 +279,7 @@ $(document).ready(function(){
 			$('#refaccion_dUsa').prop('disabled', false);
 			$('#refaccion_fInfo').prop('disabled', false);
 			$('.whys').prop('disabled', false);
-			$('.prioridadS').prop('disabled', false);
+			//$('.prioridadS').prop('disabled', false);
 			$('#aes_alcanceT').prop('disabled', false);
 			$('#aes_dibujoT').prop('disabled', false);
 			$('#aes_muestra').prop('disabled', false);
@@ -316,7 +316,7 @@ $(document).ready(function(){
 			$('#refaccion_dUsa').prop('disabled', true);
 			$('#refaccion_fInfo').prop('disabled', true);
 			$('.whys').prop('disabled', true);
-			$('.prioridadS').prop('disabled', true);
+			//$('.prioridadS').prop('disabled', true);
 			$('#aes_alcanceT').prop('disabled', true);
 			$('#aes_dibujoT').prop('disabled', true);
 			$('#aes_muestra').prop('disabled', true);
@@ -358,7 +358,8 @@ $(document).ready(function(){
 		const postData = {
 			num_p: $('#refaccion_noParte').val(),
 			marca: $('#refaccion_marca').val(),
-			cost:  $('#aes_costoUD').val(),
+			cost: $('#aes_costoU').val(),
+			costUD:  $('#aes_costoUD').val(),
 			c_e: "",
 			v_e:  ""
 		};
@@ -383,6 +384,7 @@ $(document).ready(function(){
 				alert('Error no es posible generar la prioridad');
 			}else{
 				alert('Se ha generado la prioridad de esta solicitud');
+				location.reload();
 			}
 			
 		});
