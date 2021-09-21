@@ -22,6 +22,7 @@
 	$v_e = $_POST['v_e'];
 	$cost = $_POST['costUD'];
 	$costR = $_POST['cost'];
+	$tiempoE = "";
 
 	$query = $db->connect()->prepare('SELECT *FROM item WHERE num_p = :no_parte AND marca = :marca');
 		$query->execute(['no_parte' => $num_p, 'marca' => $marca]);
@@ -39,7 +40,6 @@
 			$p_p = 0.0;
 			$p_f = 0.0;
 			$p_e = 0.0;
-			$tiempoE = "";
 			$tol = 0.00001;
 			if(abs(20.0-$c_p)<$tol)
 			{
@@ -67,7 +67,6 @@
 
 			if(abs(7.0-$c_e)<$tol)
 			{	
-				$tiempoE='Semanas';
 				$p_e = 0.2;
 				switch ($v_e) {
 					case '10':
@@ -107,60 +106,60 @@
 					
 					$p_e = 0.2;
 					switch ($v_e) {
-					case '10':
-						$tiempoE = '7 dias';
-						break;
-					case '9':
-						$tiempoE = '6 dias';
-						break;
-					case '8':
-						$tiempoE = '5 dias';
-						break;
-					case '7':
-						$tiempoE = '4 dias';
-						break;
-					case '6':
-						$tiempoE = '3 dias';
-						break;
-					default:
-						$tiempoE = '2 dias';
-						break;
-				}
+						case '10':
+							$tiempoE = '7 dias';
+							break;
+						case '9':
+							$tiempoE = '6 dias';
+							break;
+						case '8':
+							$tiempoE = '5 dias';
+							break;
+						case '7':
+							$tiempoE = '4 dias';
+							break;
+						case '6':
+							$tiempoE = '3 dias';
+							break;
+						default:
+							$tiempoE = '2 dias';
+							break;
+					}
 				}else{
 
 					$p_e = 0.3;
 					switch ($v_e) {
-					case '10':
-						$tiempoE = '24 horas';
-						break;
-					case '9':
-						$tiempoE = '22 horas';
-						break;
-					case '8':
-						$tiempoE = '19 horas';
-						break;
-					case '7':
-						$tiempoE = '17 horas';
-						break;
-					case '6':
-						$tiempoE = '14 horas';
-						break;
-					case '5':
-						$tiempoE = '12 horas';
-						break;
-					case '4':
-						$tiempoE = '10 horas';
-						break;
-					case '3':
-						$tiempoE = '7 horas';
-						break;
-					case '2':
-						$tiempoE = '5 horas';
-						break;
-					default:
-						$tiempoE = '2 horas';
-						break;
-				}
+						case '10':
+							$tiempoE = '24 horas';
+							break;
+						case '9':
+							$tiempoE = '22 horas';
+							break;
+						case '8':
+							$tiempoE = '19 horas';
+							break;
+						case '7':
+							$tiempoE = '17 horas';
+							break;
+						case '6':
+							$tiempoE = '14 horas';
+							break;
+						case '5':
+							$tiempoE = '12 horas';
+							break;
+						case '4':
+							$tiempoE = '10 horas';
+							break;
+						case '3':
+							$tiempoE = '7 horas';
+							break;
+						case '2':
+							$tiempoE = '5 horas';
+							break;
+						default:
+							$tiempoE = '2 horas';
+							break;
+					}
 				}
 			}
 

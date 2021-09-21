@@ -1,5 +1,6 @@
 <?php
 	
+	$ban = 0;
 	//Cada acción actualizará la fecha inicial
 	session_start();
 	$_SESSION['fecha']=date("Y-n-j H:i:s");
@@ -81,16 +82,16 @@
 		} 
 		$moneda_1 = stripslashes($_POST['moneda_1']);
 		$moneda_1 = mysqli_real_escape_string($conn,$moneda_1);
-		$tiempo_estimado = stripslashes($_POST['tiempo_estimado']);
-		$tiempo_estimado = mysqli_real_escape_string($conn,$tiempo_estimado);
+		/*$tiempo_estimado = stripslashes($_POST['tiempo_estimado']);
+		$tiempo_estimado = mysqli_real_escape_string($conn,$tiempo_estimado);*/
 		$nivel_ap= $_POST['nivel_ap'];
 		$aprobador_actual = stripslashes($_POST['aprobador_actual']);
 		$aprobador_actual = mysqli_real_escape_string($conn,$aprobador_actual);
 		$comprador_sap = stripslashes($_POST['comprador_sap']);
 		$comprador_sap = mysqli_real_escape_string($conn,$comprador_sap);
-		$po= $_POST['po'];
-		if (!(is_numeric($po))) {
-    		$po=0;
+		$n_po= $_POST['po'];
+		if (!(is_numeric($n_po))) {
+    		$n_po=0;
 		} 
 		$fecha_po= $_POST['fecha_po'];
 		$proveedor = stripslashes($_POST['proveedor']);
@@ -114,17 +115,19 @@
 
 		$prioridad= $row[0]['prioridad'];
 
-		$query = $db->connect()->prepare("UPDATE request SET fecha_s='$fecha_s', status= '$status', nombre_s='$nombre_s', nombre_lgt='$nombre_lgt', departamento='$departamento', tripulacion='$tripulacion', descripcion='$descripcion', cantidad='$cantidad', u_medida='$u_medida', no_parte='$no_parte', codigo_gm='$codigo_gm', marca='$marca', unica_repetitiva='$unica_repetitiva', min='$min', max='$max', consumo_mensual='$consumo_mensual', donde_se_usa='$donde_se_usa', fuente_informacion='$fuente_informacion', porque1='$porque1', porque2='$porque2', porque3='$porque3', prioridad='$prioridad', alcance_trabajo='$alcance_trabajo', dibujo_tecnico='$dibujo_tecnico', muestra_foto='$muestra_foto', tipo_compra='$tipo_compra', cuenta='$cuenta', no_sc_solped='$no_sc_solped',  costo_unitario='$costo_unitario', costo_total_1='$costo_total_1', moneda_1='$moneda_1', tiempo_estimado='$tiempo_estimado', nivel_ap='$nivel_ap', aprobador_actual='$aprobador_actual', comprador_sap='$comprador_sap', po='$po',  proveedor='$proveedor', no_factura='$no_factura', costo_total_2='$costo_total_2', moneda_2='$moneda_2', ir='$ir' WHERE id = '$id_request'");
+		$query = $db->connect()->prepare("UPDATE request SET status= '$status', descripcion='$descripcion', cantidad='$cantidad', u_medida='$u_medida', no_parte='$no_parte', codigo_gm='$codigo_gm', marca='$marca', unica_repetitiva='$unica_repetitiva', min='$min', max='$max', consumo_mensual='$consumo_mensual', donde_se_usa='$donde_se_usa', fuente_informacion='$fuente_informacion', porque1='$porque1', porque2='$porque2', porque3='$porque3', prioridad='$prioridad', alcance_trabajo='$alcance_trabajo', dibujo_tecnico='$dibujo_tecnico', muestra_foto='$muestra_foto', tipo_compra='$tipo_compra', cuenta='$cuenta', no_sc_solped='$no_sc_solped',  costo_unitario='$costo_unitario', costo_total_1='$costo_total_1', moneda_1='$moneda_1', nivel_ap='$nivel_ap', aprobador_actual='$aprobador_actual', comprador_sap='$comprador_sap', po='$n_po', proveedor='$proveedor', no_factura='$no_factura', costo_total_2='$costo_total_2', moneda_2='$moneda_2', ir='$ir' WHERE id = '$id_request'");
 		$result=$query->execute();
 		if (!$result) {
 			die('Query Failed.');
 		}
-		if($fecha_ir!="")
+		
+
+		if(!($fecha_ir==""))
 		{
 			$query = $db->connect()->prepare("UPDATE request SET fecha_ir='$fecha_ir' WHERE id = '$id_request'");
 			$result=$query->execute();
 		}
-		if($fecha_realizacion!="")
+		if(!($fecha_realizacion==""))
 		{
 			$query = $db->connect()->prepare("UPDATE request SET fecha_realizacion='$fecha_realizacion' WHERE id = '$id_request'");
 			$result=$query->execute();
@@ -135,7 +138,7 @@
 			$query = $db->connect()->prepare("UPDATE request SET fecha_liberacion='$fecha_liberacion' WHERE id = '$id_request'");
 			$result=$query->execute();
 		}
-		if($fecha_po!="")
+		if(!($fecha_po==""))
 		{
 			$query = $db->connect()->prepare("UPDATE request SET fecha_po='$fecha_po' WHERE id = '$id_request'");
 			$result=$query->execute();
@@ -154,5 +157,6 @@
 		$query = $db->connect()->prepare("UPDATE request SET nombre_r='$name_all', fecha_r='$day' WHERE id = '$id_request'");
 			$result=$query->execute();
 	}
+	 echo $ban;
 
 ?>

@@ -80,23 +80,17 @@
 
 	$result=$query->execute();
 
-	$c_p = $_POST['c_p'];
-	$v_p = $_POST['v_p'];
-	$c_f = $_POST['c_f'];
-	$v_f = $_POST['v_f'];
-	$v_d = $_POST['v_d'];
-
-	$query = $db->connect()->prepare("INSERT INTO item (id, num_p, marca, cost, c_p, v_p, c_f, v_f, c_e, v_e, v_d, priority) VALUES (NULL, '$noParte', '$brand', NULL, '$c_p', '$v_p', '$c_f', '$v_f', NULL, NULL, '$v_d', NULL)");
-
-	$result=$query->execute();
-
 	if ($result) {
 		$banReg=1;
 		$query = $db->connect()->prepare('SELECT id FROM request WHERE id = (SELECT MAX(id) FROM request)');
 		$query->execute();
 		$row = $query->fetchAll();
+
 		$_SESSION['sol']=$row[0]['id'];
 	}
+
+	include_once 'aesNewItem.php';
+	
 
 	
 
