@@ -139,8 +139,12 @@
 				<textarea id="refaccion_porque3" class="form-control" required></textarea>
 			</div>
 		</div>
-		<div>
-			<label class="form-label" for="refaccion_prioridad">Selecciona la prioridad*</label>
+		
+	</div>
+	</div>
+	<div class="card">
+	<div class="card-body row g-3">
+			<!-- <label class="form-label" for="refaccion_prioridad">Selecciona la prioridad*</label>
 			<div class="form-check">
   				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad de seguridad" id="flexRadioDefault3">
   				<label class="form-check-label" for="flexRadioDefault3">
@@ -164,11 +168,151 @@
   				<label class="form-check-label" for="flexRadioDefault6">
     				4. Sin influencia
   				</label>
+			</div> -->
+			<h4> Formulario de Prioridad</h4>
+			<div class="card col-md-4" style="background-color: #F7FAAB;">
+				<div class="card-body" >
+					<h5 class="card-title">Tipo de paro</h5>
+					<div class="form-check">
+	  					<input class="form-check-input typeParo" type="radio" name="paroSel1" value="Planta" id="paroSel1" checked>
+	  					<label class="form-check-label" for="paroSel1">
+	    						Paro de Planta
+	  					</label>
+					</div>
+						<div class="form-check">
+	  					<input class="form-check-input typeParo" type="radio" name="paroSel1" value="Linea" id="paroSel2">
+	  					<label class="form-check-label" for="paroSel2">
+	    						Paro de Linea
+	  					</label>
+					</div>
+					<div class="form-check">
+	  					<input class="form-check-input typeParo" type="radio" name="paroSel1" value="Maquina" id="paroSel3">
+	  					<label class="form-check-label" for="paroSel3">
+	    						Averia de Maquina
+	  					</label>
+					</div>
+				</div>
+				<div class="card-body">
+					<select class="form-select" id="valPlanta" >
+					    <option  value="0" selected>Seleccione...</option>
+					    <option value="10">Seguridad (Puede causar lesión).</option>
+					    <option value="9">Muy alto impacto, planta PARADA > 1 turno.</option>
+					    <option value="8">Alto impacto < 1 turno parado.</option>
+					    <option value="7">Impacto moderado. Perdida de throghput.</option>
+					    <option value="6">Bajo impacto, perdida o redundancia.</option>
+					    <option value="5">Fabricación especial dentro de estampado.</option>
+					    <option value="4">Puede ser manufacturado localmente.</option>
+					    <option value="3">El OEM o proveedor local tiene la refacción como componente estandar</option>
+					    <option value="2">La refacción esta disponible en otro almacén o complejo de GM</option>
+					    <option value="1">Otros</option>
+					</select>
+					<select class="form-select" id="valLinea" >
+					    <option  value="0" selected>Seleccione...</option>
+					    <option value="10">Esta parte NO es usada en otra maquina o es una parte usada</option>
+					    <option value="9">La refacción es obsoleta</option>
+					    <option value="8">Requiere fabricación especial fuera del taller de estampado</option>
+					    <option value="7">Afecta la calidad del producto</option>
+					    <option value="6">Sistema de protección del equipo</option>
+					    <option value="5">Fabricación especial dentro de estampado</option>
+					    <option value="4">Puede ser manufacturado localmente</option>
+					    <option value="3">El OEM o proveedor local tiene la refacción como componente estandar</option>
+					    <option value="2">La refacción esta disponible en otro almacén o complejo de GM</option>
+					    <option value="1">Otros</option>
+					</select>
+					<select class="form-select" id="valMaquina">
+					    <option  value="0" selected>Seleccione...</option>
+					    <option value="10">Esta parte NO es usada en otra maquina o es una parte usada</option>
+					    <option value="9">La refacción es obsoleta</option>
+					    <option value="8">Afecta la calidad del producto</option>
+					    <option value="7">Sistema de protección del equipo.</option>
+					    <option value="6">By pass</option>
+					    <option value="5">Reparación temporal</option>
+					    <option value="4">Equipo similar o estación de backup</option>
+					    <option value="3">El OEM o proveedor local tiene la refacción como componente estandar</option>
+					    <option value="2">Refacción equivalente</option>
+					    <option value="1">La refacción esta disponible en otro almacén o complejo de GM</option>
+					</select>
+				</div>
 			</div>
+
+			<div class="card col-md-4" style="background-color: #BBF8F6;">
+				<div class="card-body">
+					<h5 class="card-title">Frecuencia de falla</h5>
+					<div class="form-check">
+	  					<input class="form-check-input typeFalla" type="radio" name="fallaSel1" value="Dia" id="fallaSel1" checked>
+	  					<label class="form-check-label" for="fallaSel1">
+	    						En Dias
+	  					</label>
+					</div>
+						<div class="form-check">
+	  					<input class="form-check-input typeFalla" type="radio" name="fallaSel1" value="Mes" id="fallaSel2">
+	  					<label class="form-check-label" for="fallaSel2">
+	    						En Meses
+	  					</label>
+					</div>
+				</div>
+				<div class="card-body mt-4">
+					<select class="form-select" id="valDia">
+					    <option  value="0" selected>Seleccione...</option>
+					    <option value="10">10</option>
+					    <option value="9">12</option>
+					    <option value="8">14</option>
+					    <option value="7">16</option>
+					    <option value="6">18</option>
+					    <option value="5">20</option>
+					    <option value="4">22</option>
+					    <option value="3">24</option>
+					    <option value="2">26</option>
+					    <option value="1">28</option>
+					</select>
+					<select class="form-select" id="valMes">
+					    <option  value="0" selected>Seleccione...</option>
+					    <option value="20">1</option>
+					    <option value="19">2</option>
+					    <option value="18">3</option>
+					    <option value="17">4</option>
+					    <option value="16">5</option>
+					    <option value="15">6</option>
+					    <option value="14">7</option>
+					    <option value="13">8</option>
+					    <option value="12">9</option>
+					    <option value="11">10</option>
+					    <option value="10">11</option>
+					    <option value="9">12</option>
+					    <option value="8">15</option>
+					    <option value="7">18</option>
+					    <option value="6">21</option>
+					    <option value="5">24</option>
+					    <option value="4">36</option>
+					    <option value="3">42</option>
+					    <option value="2">48</option>
+					    <option value="1">60</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="card col-md-4" style="background-color: #97B7FF;">
+				<div class="card-body">
+					<h5>Deteccción</h5>
+					<select class="form-select" id="deteccion">
+					    <option  value="0" selected>Seleccione...</option>
+					    <option value="10">No predecible o instantanea</option>
+					    <option value="9">GM o experiencia en otras</option>
+					    <option value="8">Recomendación de cambio según OEM</option>
+					    <option value="7">Análisis de vibración</option>
+					    <option value="6">Monitoreo de energia de motor o ultrasonido</option>
+					    <option value="5">Análisis de termografía</option>
+					    <option value="4">Otros dispositivos de predictivo (Tribología, Tensiometro, Análisis de redes etc)</option>
+					    <option value="3">Inspección visual o ruido</option>
+					    <option value="2">La parte puede ser integrada a PM</option>
+					    <option value="1">La refacción tiene un autodiagnostico</option>
+					</select>
+				</div>
+			</div>
+
+
 		</div>
 	</div>
-	</div>
-
 	<div class="form-check">
 		<button type="submit" class="btn btn-success" id="buttonAct">
 			Guardar

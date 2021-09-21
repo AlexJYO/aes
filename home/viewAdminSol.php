@@ -155,7 +155,7 @@
 						<textarea id="refaccion_porque3" class="form-control whys" required></textarea>
 					</div>
 				</div>
-				<div>
+				<!-- <div>
 					<label class="form-label" for="refaccion_prioridad">Selecciona la prioridad*</label>
 					<div class="form-check">
 		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad de seguridad" id="flexRadioDefault3">
@@ -181,7 +181,7 @@
 		    				4. Sin influencia
 		  				</label>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 
@@ -221,9 +221,78 @@
 					<label class="form-label" for="aes_cuenta">Cuenta</label>
 					  	<select class="form-select" id="aes_cuenta" required>
 						    <option selected>Elige...</option>
-						    <option value="MX2SA00615">Produccion (MX2SA00615)</option>
-						    <option value="MX2SA00616">Dados (MX2SA00616)</option>
-						    <option value="MX2SA00617">Prensas (MX2SA00617)</option>
+						    <option value="CO21">CO21</option>
+						    <option value="CO22">CO22</option>
+						    <option value="CO23">CO23</option>
+						    <option value="CO24">CO24</option>
+						    <option value="CO25">CO25</option>
+						    <option value="CO26">CO26</option>
+						    <option value="CO27">CO27</option>
+						    <option value="CO28">CO28</option>
+						    <option value="CO29">CO29</option>
+						    <option value="CO30">CO30</option>
+						    <option value="CO31">CO31</option>
+						    <option value="CO32">CO32</option>
+						    <option value="CO33">CO33</option>
+						    <option value="CO34">CO34</option>
+						    <option value="CO35">CO35</option>
+						    <option value="CO36">CO36</option>
+						    <option value="CO37">CO37</option>
+						    <option value="CO38">CO38</option>
+						    <option value="CO39">CO39</option>
+						    <option value="CO40">CO40</option>
+						    <option value="CO41">CO41</option>
+						    <option value="CO42">CO42</option>
+						    <option value="CO43">CO43</option>
+						    <option value="CO44">CO44</option>
+						    <option value="CO45">CO45</option>
+						    <option value="CO46">CO46</option>
+						    <option value="CO47">CO47</option>
+						    <option value="CO48">CO48</option>
+						    <option value="CO49">CO49</option>
+						    <option value="CO50">CO50</option>
+						    <option value="CO51">CO51</option>
+						    <option value="CO52">CO52</option>
+						    <option value="CO53">CO53</option>
+						    <option value="CO54">CO54</option>
+						    <option value="CO55">CO55</option>
+						    <option value="CO56">CO56</option>
+						    <option value="CO57">CO57</option>
+						    <option value="CO58">CO58</option>
+						    <option value="CO59">CO59</option>
+						    <option value="CO60">CO60</option>
+						    <option value="CO61">CO61</option>
+						    <option value="CO62">CO62</option>
+						    <option value="CO63">CO63</option>
+						    <option value="CO64">CO64</option>
+						    <option value="CO65">CO65</option>
+						    <option value="CO66">CO66</option>
+						    <option value="CO67">CO67</option>
+						    <option value="CO68">CO68</option>
+						    <option value="CO69">CO69</option>
+						    <option value="CO70">CO70</option>
+						    <option value="CO71">CO71</option>
+						    <option value="CO72">CO72</option>
+						    <option value="CO73">CO73</option>
+						    <option value="CO74">CO74</option>
+						    <option value="CO75">CO75</option>
+						    <option value="CO76">CO76</option>
+						    <option value="CO77">CO77</option>
+						    <option value="CO78">CO78</option>
+						    <option value="CO79">CO79</option>
+						    <option value="CO80">CO80</option>
+						    <option value="CO81">CO81</option>
+						    <option value="CO82">CO82</option>
+						    <option value="CO83">CO83</option>
+						    <option value="CO84">CO84</option>
+						    <option value="CO85">CO85</option>
+						    <option value="CO86">CO86</option>
+						    <option value="CO87">CO87</option>
+						    <option value="CO88">CO88</option>
+						    <option value="CO89">CO89</option>
+						    <option value="CO90">CO90</option>
+						    <option value="CO91">CO91</option>
+	
 					  	</select>
 				</div>
 				<div class="col-md-6">
@@ -238,6 +307,79 @@
 					<label class="form-label" id="basic-addon1">Costo Unitario</label>	
 					<input type="number" value="0.0" step="0.01" id="aes_costoU" class="form-control" >
 				</div>
+				<div class="card" id="prioridadCal" >
+				<div class="card-body">
+					<h4> Formulario de Prioridad</h4>
+
+					<div class="form-group input-group mb-3">
+						<label class="input-group-text" >Costo Unitario en Dolares</label>	
+						<input type="number" value="0.0" step="0.01" id="aes_costoUD" class="form-control" >
+					</div>
+					<div class="card" style="background-color: #C6F8BB;">
+						<div class="card-body">
+							<h5 class="card-title">Tiempo de entrega</h5>
+							<div class="form-check">
+	  							<input class="form-check-input typeTime" type="radio" name="timeSel1" value="Semanas" id="timeSel1" checked>
+	  							<label class="form-check-label" for="timeSel1">
+	    						En Semanas
+	  							</label>
+							</div>
+							<div class="form-check">
+	  							<input class="form-check-input typeTime" type="radio" name="timeSel1" value="Dias" id="timeSel2">
+	  							<label class="form-check-label" for="timeSel2">
+	    						En Dias
+	  							</label>
+							</div>
+							<div class="form-check">
+	  							<input class="form-check-input typeTime" type="radio" name="timeSel1" value="Horas" id="timeSel3">
+	  							<label class="form-check-label" for="timeSel3">
+	    						En Horas
+	  							</label>
+							</div>
+						</div>
+
+						<div class="card-body">
+							<select class="form-select" id="valSemanas">
+					    		<option  value="0" selected>Seleccione...</option>
+					    		<option value="10">16</option>
+					    		<option value="9">12</option>
+					    		<option value="8">10</option>
+					    		<option value="7">9</option>
+					    		<option value="6">7</option>
+					    		<option value="5">6</option>
+					    		<option value="4">5</option>
+					    		<option value="3">4</option>
+					    		<option value="2">3</option>
+					    		<option value="1">2</option>
+							</select>
+							<select class="form-select" id="valDias">
+					    		<option  value="0" selected>Seleccione...</option>
+					    		<option value="10">7</option>
+					    		<option value="9">6</option>
+					    		<option value="8">5</option>
+					    		<option value="7">4</option>
+					    		<option value="6">3</option>
+					    		<option value="5">2</option>
+							</select>
+							<select class="form-select" id="valHoras">
+					    		<option  value="0" selected>Seleccione...</option>
+					    		<option value="10">24</option>
+					    		<option value="9">22</option>
+					    		<option value="8">19</option>
+					    		<option value="7">17</option>
+					    		<option value="6">14</option>
+					    		<option value="5">12</option>
+					    		<option value="4">10</option>
+					    		<option value="3">7</option>
+					    		<option value="2">5</option>
+					    		<option value="1">2</option>
+							</select>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary mt-3" id="calcularP">Calcular</button>
+				</div>
+
+				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Costo Total</label>	
 					<input type="number" value="0.0" step="0.01" id="aes_costoT1" class="form-control" >
@@ -248,7 +390,7 @@
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Tiempo de Entrega Estimado</label>	
-					<input type="text" id="aes_tiempoE" class="form-control" >
+					<input type="text" id="aes_tiempoE" class="form-control" disabled>
 				</div>
 				<div class="col-md-6">
 					<label class="form-label" id="basic-addon1">Aprovador Actual</label>	

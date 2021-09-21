@@ -146,33 +146,7 @@
 						<textarea id="refaccion_porque3" class="form-control whys" disabled></textarea>
 					</div>
 				</div>
-				<div >
-					<label class="form-label" for="refaccion_prioridad">Selecciona la prioridad*</label>
-					<div class="form-check" >
-		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad de seguridad" id="flexRadioDefault3" disabled>
-		  				<label class="form-check-label" for="flexRadioDefault3">
-		    				1. Prioridad de seguridad
-		  				</label>
-					</div>
-					<div class="form-check" >
-		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad como paro total" id="flexRadioDefault4" disabled>
-		  				<label class="form-check-label" for="flexRadioDefault4">
-		    				2. Prioridad como paro total
-		  				</label>
-					</div>
-					<div class="form-check">
-		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Prioridad como paro parcial" id="flexRadioDefault5" disabled>
-		  				<label class="form-check-label" for="flexRadioDefault5">
-		    				3. Prioridad como paro parcial
-		  				</label>
-					</div>
-					<div class="form-check">
-		  				<input class="form-check-input prioridadS" type="radio" name="flexRadioDefault3" value="Sin influencia" id="flexRadioDefault6"checked disabled>
-		  				<label class="form-check-label" for="flexRadioDefault6">
-		    				4. Sin influencia
-		  				</label>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 

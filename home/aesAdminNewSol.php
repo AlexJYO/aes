@@ -59,6 +59,7 @@
 	<?php include('libs.php');?>
 	
 	<script type="text/javascript" src="../js/jsAesNewSol.js"></script>
+	<script type="text/javascript" src="../js/jsAesForm.js"></script>
 
 
 </body>
