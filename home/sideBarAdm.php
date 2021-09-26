@@ -17,17 +17,20 @@
             <a href="<?php echo $dir;?>">Información</a>
         </li>
         <li class="dropdown show" id="linkRequest">
-      <a class="dropdown-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-        Solicitudes
-      </a>
-      <div class="collapse " id="home-collapse">
-        <ul class="list-unstyled">
-          <li><a href="aesAdminNewSol.php">Nueva</a></li>
-          <li><a href="aesAdminSol.php">Solicitudes</a></li>
-          <!-- <li><a href="#" >Busqueda</a></li> -->
-        </ul>
-      </div>
-    </li>
+            <a class="dropdown-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                Solicitudes
+            </a>
+            <div class="collapse " id="home-collapse">
+                 <ul class="list-unstyled">
+                <li><a href="aesAdminNewSol.php">Nueva</a></li>
+                <li><a href="aesAdminSol.php">Solicitudes</a></li>
+                 <!-- <li><a href="#" >Busqueda</a></li> -->
+                </ul>
+            </div>
+        </li>
+        <li id="linkUser">
+            <a href="aesAdminItem.php">Artículos</a>
+        </li>
       
          <li id="linkUser">
             <a href="aesAdminUser.php">Usuarios</a>
